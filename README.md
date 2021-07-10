@@ -1,4 +1,7 @@
-# EPW Recaster ( v2 | Alpha Release )
+# EPW Recaster
+
+## Version
+`v2 | Alpha Release`
 
 ## Demonstration Usage
 https://youtu.be/iDBHqHXTZS8
