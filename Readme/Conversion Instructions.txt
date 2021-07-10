@@ -1,0 +1,6 @@
+https://www.markdowntopdf.com
+
+- Upload images to https://snipboard.io
+- Use custom style
+- Page break code:
+  <div style="page-break-after: always"></div>
