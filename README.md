@@ -1,13 +1,10 @@
-﻿===================================================================
-**[ EPW Recaster ( v2 | Alpha Release﻿ ) | Release Info ]**
+# EPW Recaster ( v2 | Alpha Release )
 
-**[ `Demonstration Usage` ]**
+##Demonstration Usage
 https://youtu.be/iDBHqHXTZS8
 
-**[ `Download URL` ]**
+##Download URL
 ( todo )
 
-**[ `Most Recent Releases & Info` ]**
+##Most Recent Releases & Info
 ( todo )
-
-===================================================================
