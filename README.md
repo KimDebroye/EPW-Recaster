@@ -3,6 +3,9 @@
 
 ![Overview](https://github.com/KimDebroye/EPW-Recaster/blob/master/GitHub%20Assets/Overview%20(v2).png)
 
+## Download
+**[ [ Latest Version ](https://github.com/KimDebroye/EPW-Recaster/releases) ]**
+
 ## In a nutshell
 EPW Recaster is a tool that automates recasting EPW weapons & gears<br />using Optical Character Recognition and user-configurable search conditions.<br />
 > *EPW Recaster does not rely on nor uses any kind of game hook.<br />It solely relies on what is captured using OCR and performs<br />programmatorical choices & actions based on captured results.*
