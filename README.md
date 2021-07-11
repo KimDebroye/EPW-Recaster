@@ -79,6 +79,7 @@ ___
 	- *In other words*, this list needs to be read as:<br />*Stop rolling when*<br />*f.e.* `2 x Channelling` **OR** `2 x Reduce Magic Damage Taken`<br />*is found*<br />**AND**<br />*f.e.* `2 x Critical Hit Rate` **OR** `2 x Elemental Resistance`<br />*is combined with it*.
 
 > Additional Notes
+
 - Empty list = default | any other stat combination.
 - To be used for specific *exotic* rolls.
 - **[ ! ] To be used with care, since other rolls may get discarded**.
