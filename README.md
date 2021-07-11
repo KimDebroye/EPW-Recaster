@@ -68,7 +68,6 @@ ___
 - A list containing previously added required roll conditions
 - **used in order to programmatorically stop rolling when one of the listed required conditions is met**.
 	- *In other words*, this list needs to be read as:<br />*Stop rolling when*<br />*f.e.* `2 x Channelling` **OR** `2 x Reduce Magic Damage Taken`<br />*is found*.
-- Any previously added condition can be removed by pressing the red `x`.
 
 ___
 
