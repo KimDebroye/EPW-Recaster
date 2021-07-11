@@ -19,6 +19,7 @@ EPW Recaster is a tool that automates recasting EPW weapons & gears<br />using O
 		- Right-click `EPW Recaster(.exe)`<br />and choose `Properties`.
 		- In `Compatibility` tab,<br />check `☑ Run this program as an administrator`<br />and confirm by clicking `OK`.
 
+<div>&nbsp;<br />&nbsp;</div>
 <div style="page-break-after: always"></div>
 
 ## Sections
@@ -99,8 +100,7 @@ ___
 - The HP stat has not been listed as an option.
 - Using any kind of text editor, the list of selectable stat options can be altered in<br />`.\Config\Stats.cfg` (*includes additional comments*).
 
-___
-
+<div>&nbsp;<br />&nbsp;</div>
 <div style="page-break-after: always"></div>
 
 ### 2. Info Form
