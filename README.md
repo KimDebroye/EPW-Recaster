@@ -35,7 +35,7 @@ EPW Recaster is a tool that automates recasting EPW weapons & gears<br />using O
 
 ### 1. ( Main ) Setup Form
 
---
+___
 
 #### 1-1. See-through Region
 - When launching EPW Recaster for the first time
@@ -52,7 +52,7 @@ EPW Recaster is a tool that automates recasting EPW weapons & gears<br />using O
   - Depending on the fitting, parts of the in-game UI could be detected as a character<br />( *f.e. the in-game scroll up icon may be detected as capital 'A'* ).<br />This can (usually) be safely ignored.
 - **[ ! ] It is strongly discouraged to use EPW Recaster to look for stats on weapons that have unique (*long descriptive*) stats**, unless it's (*one of those*) unique stats being sought after.<br />*In other words*, avoid looking for stats on weapons having `Purify Spell`, `God of Frenzy`, `Square Formation`, `Soul Shatter`, `Spirit Blackhole`, ... as a possible stat in order not to miss a stat needing an in-game scroll (*unless the previously mentioned stats are being sought after*).
 
--
+___
 
 #### 1-2. Capture Region
 - ( *A visible preview of* )
@@ -61,7 +61,7 @@ EPW Recaster is a tool that automates recasting EPW weapons & gears<br />using O
 	- **Preview Mode : full width of see-through region** and a little above the in-game buttons.
 	- **Roll Mode : right half of see-through region** and a little above the in-game buttons.
 
--
+___
 
 #### 1-3. Required Condition List
 - A list containing previously added required roll conditions
@@ -69,7 +69,7 @@ EPW Recaster is a tool that automates recasting EPW weapons & gears<br />using O
 	- *In other words*, this list needs to be read as:<br />*Stop rolling when*<br />*f.e.* `2 x Channelling` **OR** `2 x Reduce Magic Damage Taken`<br />*is found*.
 - Any previously added condition can be removed by pressing the red `x`.
 
--
+___
 
 #### 1-4. Additional Condition List
 - A list containing previously added additional roll conditions
@@ -81,7 +81,7 @@ EPW Recaster is a tool that automates recasting EPW weapons & gears<br />using O
 - To be used for specific *exotic* rolls.
 - **[ ! ] To be used with care, since other rolls may get discarded**.
 
--
+___
 
 #### 1-5. Condition Entry (Entries)
 - In order to enlist a roll condition:
@@ -98,13 +98,13 @@ EPW Recaster is a tool that automates recasting EPW weapons & gears<br />using O
 - The HP stat has not been listed as an option.
 - Using any kind of text editor, the list of selectable stat options can be altered in<br />`.\Config\Stats.cfg` (*includes additional comments*).
 
--
+___
 
 <div style="page-break-after: always"></div>
 
 ### 2. Info Form
 
---
+___
 
 #### 2-1. Form (Un)Chainer
 - **A toggle button attaching/detaching the info form to/from the main form.**
@@ -115,19 +115,19 @@ EPW Recaster is a tool that automates recasting EPW weapons & gears<br />using O
 		- Both main and info form will be separately movable and resizable.
 		- Both form locations and sizes will be stored and restored upon relaunch.
 
--
+___
 
 #### 2-2. Log Folder
 - **Clicking this button opens the log folder.**
   - For each roll, a resulting text and image file is logged.
   - **[ ! ] Occasionally empty/delete this folder<br />in order to free up storage space**.
 
--
+___
 
 #### 2-3. OCR Result Info
 - Displays all text captured together with some additional info when previewing or rolling.
 
--
+___
 
 #### 2-4. Preview | Roll Mode
 - **Preview Mode** ( *default at first launch* ) :
