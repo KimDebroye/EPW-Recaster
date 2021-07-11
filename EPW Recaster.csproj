@@ -674,6 +674,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="GitHub Assets\" />
     <Folder Include="Tesseract\5 %28Alpha%29\tessdata\script\" />
   </ItemGroup>
   <ItemGroup>

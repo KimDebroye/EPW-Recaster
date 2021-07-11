@@ -158,15 +158,9 @@ namespace EPW_Recaster
             // == SETUP ==
             // ===========
 
-            AddMsg(); // An empty msg clears (rich) text box.
+            #region Initial roll setup.
 
-            #region Ocr Logic.
-            //if (this.InvokeRequired)
-            //{
-            //    this.BeginInvoke(new MethodInvoker(delegate {
-                    
-            //    }));
-            //}
+            AddMsg(); // An empty msg clears (rich) text box.
 
             bool keepRunning = true;
 
@@ -226,9 +220,13 @@ namespace EPW_Recaster
                 }
             }
 
+            #endregion
+
             // ===============
             // == ROLL LOOP ==
             // ===============
+
+            #region Main roll loop.
 
             while (keepRunning)
             {
@@ -236,6 +234,7 @@ namespace EPW_Recaster
                 // == CURRENT ROLL SETUP ==
                 // ========================
 
+                #region Current roll setup.
                 Ocr_Token.ThrowIfCancellationRequested();
 
                 img = CaptureRegion();
@@ -293,11 +292,13 @@ namespace EPW_Recaster
 
                 // Display in info box.
                 AddMsg();
+                #endregion
 
                 // ===================
                 // == VALIDATE ROLL ==
                 // ===================
 
+                #region Validate roll.
                 if (!String.IsNullOrEmpty(currEquipment.OcrText))
                 {
                     if (currEquipment.OcrText.Count() >= 20) // Consider as containing stats when char count > 20.
@@ -344,7 +345,7 @@ namespace EPW_Recaster
 
                                             uniqueStatWarningShown = true; // Only show once.
 
-                                            if(userChoice == DialogResult.Cancel)
+                                            if (userChoice == DialogResult.Cancel)
                                             {
                                                 Ocr_CancellationTokenSource.Cancel();
                                             }
@@ -381,11 +382,13 @@ namespace EPW_Recaster
                     //AddMsg("No text found in region.");
                     AddMsg("No new valid roll information detected (yet).");
                 }
+                #endregion
 
                 // ======================
                 // == JUDGE CONDITIONS ==
                 // ======================
 
+                #region Judge conditions.
                 // Check history first, stop if needed.
                 // [DEVNOTE] Only check when history is filled entirely.
                 if (!InfoGui.PreviewCapture & capturedTextHistory.Count == capturedTextHistoryCapacity && capturedTextHistory.Distinct().Count() == 1)
@@ -429,6 +432,7 @@ namespace EPW_Recaster
                     // MATCH AGAINST REQUIRED CONDITIONS.
                     // ----------------------------------
 
+                    #region Required condition(s) matching.
                     AddMsg("=========================");
                     AddMsg("[  Required Conditions  ]");
 
@@ -455,11 +459,13 @@ namespace EPW_Recaster
                                 break;*/ // [DEVNOTE] Don't break for informative display purposes.
                         }
                     }
+                    #endregion
 
                     // ----------------------------------
                     // MATCH AGAINST OPTIONAL CONDITIONS.
                     // ----------------------------------
 
+                    #region Additional condition(s) matching.
                     // Only when at least one subcondition has been set
                     // & one of required conditions is met.
                     if (subConditions.Count > 0)
@@ -507,7 +513,11 @@ namespace EPW_Recaster
                         // If no subconditions were set, check as true.
                         subConditionMet = true;
                     }
+                    #endregion
 
+                    // ---------------------
+                    // LOG RESULTS/DECISION.
+                    // ---------------------
 
                     //AddMsg("=====" + Environment.NewLine + "Total hits: " + totalHits + "."); // [DEVNOTE] Per roll only, not overall. Hidden to avoid confusion.
                     AddMsg("=========================");
@@ -521,14 +531,15 @@ namespace EPW_Recaster
                         else
                         {
                             AddMsg("  => Retaining old attributes.");
-                        } 
+                        }
                     }
                 }
 
                 if (!InfoGui.PreviewCapture)
                 {
-                    AddMsg("• Number of rolls: " + nrRolls.ToString() + " / " + maxNrRolls.ToString() + "."); 
+                    AddMsg("• Number of rolls: " + nrRolls.ToString() + " / " + maxNrRolls.ToString() + ".");
                 }
+                #endregion
 
                 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -553,6 +564,7 @@ namespace EPW_Recaster
                 // == ACTIONS ==
                 // =============
 
+                #region Perform actions based on matching decision.
                 if (!InfoGui.PreviewCapture & keepRunning) // [DEVNOTE] keepRunning could have been set to false in history check.
                 {
                     // Wait for a bit before rejecting or accepting current roll.
@@ -610,7 +622,9 @@ namespace EPW_Recaster
                 {
                     keepRunning = false;
                 }
+                #endregion
             }
+
             #endregion
         }
 

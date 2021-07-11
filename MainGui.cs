@@ -678,6 +678,10 @@ namespace EPW_Recaster
                     // Do nothing. | Don't add.
                 }
             }
+
+            // Reset condition entry.
+            numAmount.Value = 1;
+            cbTerms.SelectedIndex = 0;
         }
 
         private void AddSubCondition(Condition subCondition)
@@ -800,6 +804,10 @@ namespace EPW_Recaster
                     // Do nothing. | Don't add.
                 }
             }
+
+            // Reset condition entry.
+            numSubAmount.Value = 1;
+            cbSubTerms.SelectedIndex = 0;
         }
 
         private void RemoveCondition(ListViewItem conditionItem)
