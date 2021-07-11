@@ -9,7 +9,7 @@ EPW Recaster is a tool that automates recasting EPW weapons & gears<br />using O
 
 ## TL;DR QuickStart Video Demonstration/Guide
 
-[![EPW Recaster ~ Demonstration Video](https://github.com/KimDebroye/EPW-Recaster/blob/master/GitHub%20Assets/YouTube%20Video%20Img%20Link.png)](https://youtu.be/oJFX1B_un_Q)
+[![EPW Recaster ~ Demonstration Video](https://github.com/KimDebroye/EPW-Recaster/blob/master/GitHub%20Assets/YouTube%20Video%20Img%20Link.png)](https://youtu.be/iDBHqHXTZS8)
 
 ## Setup
 - Extract the contents of the provided package<br />to any folder that has write privileges.<br />( *f.e.* `Desktop` | `C:\Apps\EPW Recaster` | ... )
