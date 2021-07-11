@@ -1,14 +1,15 @@
 ﻿
 # EPW Recaster
 
-![Overview](https://snipboard.io/V7GhpE.jpg)
+![Overview](https://github.com/KimDebroye/EPW-Recaster/blob/master/GitHub%20Assets/Overview%20(v2).png)
 
 ## In a nutshell
 EPW Recaster is a tool that automates recasting EPW weapons & gears<br />using Optical Character Recognition and user-configurable search conditions.<br />
 **[ Side note ]** *EPW Recaster does not rely on nor uses any kind of game hook.<br />It solely relies on what is captured using OCR and performs<br />programmatorical choices & actions based on captured results.*
 
 ## TL;DR QuickStart Video Demonstration/Guide
-https://youtu.be/oJFX1B_un_Q
+
+[![EPW Recaster ~ Demonstration Video](https://github.com/KimDebroye/EPW-Recaster/blob/master/GitHub%20Assets/YouTube%20Video%20Img%20Link.png)](https://youtu.be/oJFX1B_un_Q)
 
 ## Setup
 - Extract the contents of the provided package<br />to any folder that has write privileges.<br />( *f.e.* `Desktop` | `C:\Apps\EPW Recaster` | ... )
@@ -21,7 +22,7 @@ https://youtu.be/oJFX1B_un_Q
 
 ## Sections
 
-![Sections](https://snipboard.io/KNDg30.jpg)
+![Sections](https://github.com/KimDebroye/EPW-Recaster/blob/master/GitHub%20Assets/Sections%20(v2).png)
 
 ### General Notes
 - Once a preview or an auto-roll is started, the main form will be programmatorically minimized and restored after.<br />( *The main form is mainly used for setup purposes only.* )
