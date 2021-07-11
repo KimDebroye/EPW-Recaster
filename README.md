@@ -5,7 +5,8 @@
 
 ## In a nutshell
 EPW Recaster is a tool that automates recasting EPW weapons & gears<br />using Optical Character Recognition and user-configurable search conditions.<br />
-**[ Side note ]** *EPW Recaster does not rely on nor uses any kind of game hook.<br />It solely relies on what is captured using OCR and performs<br />programmatorical choices & actions based on captured results.*
+> Side Note
+*EPW Recaster does not rely on nor uses any kind of game hook.<br />It solely relies on what is captured using OCR and performs<br />programmatorical choices & actions based on captured results.*
 
 ## TL;DR QuickStart Video Demonstration/Guide
 
