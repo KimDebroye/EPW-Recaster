@@ -47,7 +47,7 @@ EPW Recaster is a tool that automates recasting EPW weapons & gears<br />using O
 > Additional Notes
 
 - **The fitting does not need to be pixel perfect in order for the Optical Character Recognition to work properly.**
-- Depending on the fitting, parts of the in-game UI could be detected as a character<br />( *f.e. the in-game scroll up icon may be detected as capital 'A'* ).<br />This can be safely ignored.
+  - Depending on the fitting, parts of the in-game UI could be detected as a character<br />( *f.e. the in-game scroll up icon may be detected as capital 'A'* ).<br />This can (usually) be safely ignored.
 - **[ ! ] It is strongly discouraged to use EPW Recaster to look for stats on weapons that have unique (*long descriptive*) stats**, unless it's (*one of those*) unique stats being sought after.<br />*In other words*, avoid looking for stats on weapons having `Purify Spell`, `God of Frenzy`, `Square Formation`, `Soul Shatter`, `Spirit Blackhole`, ... as a possible stat in order not to miss a stat needing an in-game scroll (*unless the previously mentioned stats are being sought after*).
 
 #### 1-2. Capture Region
