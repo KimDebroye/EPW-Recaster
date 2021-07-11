@@ -31,6 +31,7 @@ EPW Recaster is a tool that automates recasting EPW weapons & gears<br />using O
 - All changes are automatically stored and restored upon relaunch.
 - Using any kind of text editor, theming options can be altered in<br />  `.\Config\ThemeColorStyle.cfg` (*includes additional comments*).
 
+<div>&nbsp;<br />&nbsp;</div>
 <div style="page-break-after: always"></div>
 
 ### 1. ( Main ) Setup Form
