@@ -27,9 +27,9 @@ ___
 
 - Extract the contents of the provided package<br />to any folder that has write privileges.<br />( *f.e.* `Desktop` | `C:\Apps\EPW Recaster` | ... )
 - Launch `EPW Recaster(.exe)`.
-	- **[ Developer Note ]**<br />This tool may require admin privileges.<br />In case the OS configuration requires it<br />in order for the tool to run properly:
-		- Right-click `EPW Recaster(.exe)`<br />and choose `Properties`.
-		- In `Compatibility` tab,<br />check `☑ Run this program as an administrator`<br />and confirm by clicking `OK`.
+  - **[ Developer Note ]**<br />This tool may require admin privileges.<br />In case the OS configuration requires it<br />in order for the tool to run properly:
+    - Right-click `EPW Recaster(.exe)`<br />and choose `Properties`.
+    - In `Compatibility` tab,<br />check `☑ Run this program as an administrator`<br />and confirm by clicking `OK`.
 
 ___
 
@@ -227,14 +227,14 @@ ___
 ![Preview | Roll Mode](https://i.snipboard.io/69rtB2.jpg)
 
 - **Preview Mode** ( *default at first launch* ) :
-	- Once started, will perform one single text capture.
-	- No rolls will be performed in-game.
+  - Once started, will perform one single text capture.
+  - No rolls will be performed in-game.
 - **Roll Mode**
-	- Once started, will perform a set number of in-game rolls,
-		- obeying any previously set conditions &
-		- resulting in a programmatically moving mouse cursor and mouse clicks.
-	- Can be stopped at any given time by clicking the `Stop` button.
-		- Using any kind of text editor, timings can be altered in<br />  `.\Config\Params.cfg` (*includes additional comments*).
+  - Once started, will perform a set number of in-game rolls,
+    - obeying any previously set conditions &
+	- resulting in a programmatically moving mouse cursor and mouse clicks.
+  - Can be stopped at any given time by clicking the `Stop` button.
+  - Using any kind of text editor, timings can be altered in<br />  `.\Config\Params.cfg` (*includes additional comments*).
 
 ___
 
