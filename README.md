@@ -266,7 +266,7 @@ ___
 ➥ **Answer**:
 - **It did not meet any requirements set in the condition list.**<br />Always put some thought in which rolled stats would be preferred and add all-encompassing conditions for those.
 - Another probability could be the roll contained a unique stat with a long description.<br />Check [ [ 1.1. See-through Region ](#1-1-see-through-region) ] for more information.
-- **Inform me with detailed information ( *and if possible steps to reproduce* ) if you think any of the above aren't the reason.<br />I would consider that a priority fix.**
+- **Inform me with detailed information ( *and if possible steps to reproduce* )<br />if you think any of the above aren't the reason.<br />I would consider such a priority fix.**
 
 </details>
 
