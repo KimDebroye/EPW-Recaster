@@ -26,24 +26,12 @@ namespace EPW_Recaster.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string Conditions {
+        public string ConditionLists {
             get {
-                return ((string)(this["Conditions"]));
+                return ((string)(this["ConditionLists"]));
             }
             set {
-                this["Conditions"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string SubConditions {
-            get {
-                return ((string)(this["SubConditions"]));
-            }
-            set {
-                this["SubConditions"] = value;
+                this["ConditionLists"] = value;
             }
         }
         
@@ -128,6 +116,18 @@ namespace EPW_Recaster.Properties {
             }
             set {
                 this["MaxRolls"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int CurrentConditionListIndex {
+            get {
+                return ((int)(this["CurrentConditionListIndex"]));
+            }
+            set {
+                this["CurrentConditionListIndex"] = value;
             }
         }
     }

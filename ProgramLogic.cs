@@ -13,27 +13,34 @@ namespace EPW_Recaster
 {
     public partial class MainGui
     {
+        #region Variables | Properties.
+
         // For logging purposes.
-        Bitmap img;
+        private Bitmap img;
 
         // To be used by Tesseract (OCR).
-        Bitmap upscaledImg;
-        string upscaledImgPath = Tesseract.Ocr.TempCacheDirectory + @"\tmp.png";
+        private Bitmap upscaledImg;
 
-        int CaptureRegionWidth { get; set; } = 0;
-        int CaptureRegionHeight { get; set; } = 0;
+        private string upscaledImgPath = Tesseract.Ocr.TempCacheDirectory + @"\tmp.png";
 
-        Point CaptureRegionUpperLeftPoint { get; set; } = new Point();
+        private int CaptureRegionWidth { get; set; } = 0;
+        private int CaptureRegionHeight { get; set; } = 0;
 
-        Point RetainClickPoint { get; set; } = new Point();
+        private Point CaptureRegionUpperLeftPoint { get; set; } = new Point();
 
-        Point NewClickPoint { get; set; } = new Point();
+        private Point RetainClickPoint { get; set; } = new Point();
 
-        Point ReproduceClickPoint { get; set; } = new Point();
+        private Point NewClickPoint { get; set; } = new Point();
 
-        int AwaitIngameReproduceButtonAvailable { get; set; } = 1750; // Time it takes for the in-game reproduce button to become available again.
-        int AwaitIngameStatsRolled { get; set; } = 1250; // Time it takes for the in-game stats to be rolled.
-        int AwaitAcceptRejectAction { get; set; } = 1750; // Time to wait before accepting/rejecting a roll.
+        private Point ReproduceClickPoint { get; set; } = new Point();
+
+        private int AwaitIngameReproduceButtonAvailable { get; set; } = 1750; // Time it takes for the in-game reproduce button to become available again.
+        private int AwaitIngameStatsRolled { get; set; } = 1250; // Time it takes for the in-game stats to be rolled.
+        private int AwaitAcceptRejectAction { get; set; } = 1750; // Time to wait before accepting/rejecting a roll.
+
+        #endregion Variables | Properties.
+
+        #region Methods.
 
         private System.Drawing.Bitmap CaptureRegion()
         {
@@ -48,6 +55,9 @@ namespace EPW_Recaster
         {
             // Clear info text.
             AddMsg();
+
+            // Set default color (in case needed in code later on).
+            DefaultColor = InfoGui.rTxtBoxInfo.SelectionColor;
 
             if (!Directory.Exists(Tesseract.Ocr.AssemblyCodeBaseDirectory + @"\Logged"))
             {
@@ -181,46 +191,28 @@ namespace EPW_Recaster
             // Get conditions for this preview or batch roll.
             List<Condition> conditions = new List<Condition>();
 
-            if (lvConditions.InvokeRequired)
+            // Get conditions for this preview or batch roll.
+            List<ConditionListEntry> conditionListEntries = new List<ConditionListEntry>();
+
+            if (dgConditions.InvokeRequired)
             {
-                lvConditions.Invoke(new MethodInvoker(delegate
+                dgConditions.Invoke(new MethodInvoker(delegate
                 {
-                    foreach (ListViewItem lvi in lvConditions.Items)
+                    foreach (DataGridViewRow row in dgConditions.Rows)
                     {
-                        conditions.Add((Condition)lvi.Tag);
+                        conditionListEntries.Add((ConditionListEntry)row.Tag);
                     }
                 }));
             }
             else
             {
-                foreach (ListViewItem lvi in lvConditions.Items)
+                foreach (DataGridViewRow row in dgConditions.Rows)
                 {
-                    conditions.Add((Condition)lvi.Tag);
+                    conditionListEntries.Add((ConditionListEntry)row.Tag);
                 }
             }
 
-            // Get subconditions for this preview or batch roll.
-            List<Condition> subConditions = new List<Condition>();
-
-            if (lvSubConditions.InvokeRequired)
-            {
-                lvSubConditions.Invoke(new MethodInvoker(delegate
-                {
-                    foreach (ListViewItem lvi in lvSubConditions.Items)
-                    {
-                        subConditions.Add((Condition)lvi.Tag);
-                    }
-                }));
-            }
-            else
-            {
-                foreach (ListViewItem lvi in lvSubConditions.Items)
-                {
-                    subConditions.Add((Condition)lvi.Tag);
-                }
-            }
-
-            #endregion
+            #endregion Initial roll setup.
 
             // ===============
             // == ROLL LOOP ==
@@ -235,6 +227,7 @@ namespace EPW_Recaster
                 // ========================
 
                 #region Current roll setup.
+
                 Ocr_Token.ThrowIfCancellationRequested();
 
                 img = CaptureRegion();
@@ -280,6 +273,7 @@ namespace EPW_Recaster
                 currEquipment.OcrText = rawCapturedText;
 
                 #region Queue handling.
+
                 // Add most recent capture.
                 capturedTextHistory.Enqueue(currEquipment.OcrText);
 
@@ -288,17 +282,41 @@ namespace EPW_Recaster
                 {
                     capturedTextHistory.Dequeue();
                 }
-                #endregion
+
+                #endregion Queue handling.
+
+                #region (Temporarily) Cache the config short terms.
+
+                List<string[]> cfgTerms = new List<string[]>();
+
+                // Load cfg file containing terms and temp cache/store all terms found.
+                foreach (string term in File.ReadAllLines(Tesseract.Ocr.AssemblyCodeBaseDirectory + @"\Config\Stats.cfg"))
+                {
+                    if (!term.Contains('#')) // Ignore custom comments.
+                    {
+                        // Split by pipe character '|'.
+                        string[] splitTerm = term.Split('|');
+
+                        if (splitTerm.Count() == 2)
+                        {
+                            cfgTerms.Add(new string[] { splitTerm[0].Trim(), splitTerm[1].Trim() }); // splitTerm[0] = long term | splitTerm[1] = short term
+                        }
+                    }
+                }
+
+                #endregion (Temporarily) Cache the config short terms.
 
                 // Display in info box.
                 AddMsg();
-                #endregion
+
+                #endregion Current roll setup.
 
                 // ===================
                 // == VALIDATE ROLL ==
                 // ===================
 
                 #region Validate roll.
+
                 if (!String.IsNullOrEmpty(currEquipment.OcrText))
                 {
                     if (currEquipment.OcrText.Count() >= 20) // Consider as containing stats when char count > 20.
@@ -312,14 +330,13 @@ namespace EPW_Recaster
                             if (blueStats.Count() >= 4)
                             {
                                 if (currEquipment.IsWeapon)
-                                    AddMsg("[ Detected Blue Weapon Stats ]");
+                                    AddMsg(new RtMessage("[ Detected Blue Weapon Stats ]", bold: true));
                                 else
-                                    AddMsg("[ Detected Blue Gear Stats ]");
+                                    AddMsg(new RtMessage("[ Detected Blue Gear Stats ]", bold: true));
 
                                 foreach (Stat blueStat in blueStats)
                                 {
-                                    //AddMsg(new RtMessage(blueStats[i], "Blue"));
-                                    AddMsg("⮩ " + blueStat.FormattedStat);
+                                    AddMsg(new RtMessage("⮩ " + blueStat.FormattedStat, color: BlueStatColor, indent: 3));
 
                                     if (!uniqueStatWarningShown)
                                     {
@@ -330,15 +347,18 @@ namespace EPW_Recaster
                                             DialogResult userChoice = MessageBox.Show(
                                                 "A 'Purify' stat was detected.\r\n" +
                                                 "\r\n" +
-                                                "This will result in incorrect judging and handling of conditions " +
+                                                "Without any actual game file alterations (configs.pck),\r\n" +
+                                                "this will result in incorrect judging and handling of conditions " +
                                                 "whenever this stat is rolled, since the in-game window needs scrolling " +
                                                 "for all stats to be readable (falling out of scope for " + Application.ProductName + ").\r\n" +
                                                 "\r\n" +
-                                                "In short:\r\n" +
-                                                "Some rolls could miss out on accepting a possibly valid roll.\r\n" +
+                                                "======\r\n" +
+                                                "In short :\r\n" +
+                                                "======\r\n" +
+                                                "If long descriptive stat(s) aren't patched,\r\nsome rolls could miss out on accepting a possibly valid roll.\r\n" +
                                                 "\r\n" +
-                                                "Continue rolling?",
-                                                "IMPORTANT WARNING",
+                                                "Continue rolling ?",
+                                                "[ IMPORTANT WARNING ]",
                                                 MessageBoxButtons.OKCancel,
                                                 MessageBoxIcon.Warning
                                                 );
@@ -353,6 +373,8 @@ namespace EPW_Recaster
                                     }
                                 }
 
+                                AddMsg("=========================");
+
                                 validEntry = true;
 
                                 // Increase roll counter if the current capture was a valid one.
@@ -360,7 +382,7 @@ namespace EPW_Recaster
                             }
                             else
                             {
-                                AddMsg("[ Equipment Not Identifiable ]");
+                                AddMsg(new RtMessage("[ Equipment Not Identifiable ]", color: RedLightColor, bold: true));
                                 AddMsg(
                                     "  => This roll will not be judged/handled."
                                     );
@@ -374,29 +396,31 @@ namespace EPW_Recaster
                     }
                     else
                     {
-                        AddMsg("No new valid roll information detected (yet).");
+                        AddMsg("No valid roll information detected (yet).");
                     }
                 }
                 else
                 {
                     //AddMsg("No text found in region.");
-                    AddMsg("No new valid roll information detected (yet).");
+                    AddMsg("No valid roll information detected (yet).");
                 }
-                #endregion
+
+                #endregion Validate roll.
 
                 // ======================
                 // == JUDGE CONDITIONS ==
                 // ======================
 
                 #region Judge conditions.
+
                 // Check history first, stop if needed.
                 // [DEVNOTE] Only check when history is filled entirely.
                 if (!InfoGui.PreviewCapture & capturedTextHistory.Count == capturedTextHistoryCapacity && capturedTextHistory.Distinct().Count() == 1)
                 {
                     AddMsg(); // Clear info box first.
 
-                    AddMsg("It doesn't seem necessary to roll any further." + Environment.NewLine +
-                        "The roll process has been halted automatically.");
+                    AddMsg(new RtMessage("The roll process has been halted.", bold: true));
+                    AddMsg("( It doesn't seem necessary to roll any further. )" + Environment.NewLine);
                     AddMsg("Either:" + Environment.NewLine +
                         "- the in-game number of Perfect Elements" + Environment.NewLine +
                         "  has been depleted" + Environment.NewLine +
@@ -406,7 +430,7 @@ namespace EPW_Recaster
                         "- the tool wasn't able to read rolled stats correctly" + Environment.NewLine +
                         "  > check capture region boundaries" + Environment.NewLine +
                         "  > check if tool is overlapping" + Environment.NewLine +
-                        "    game client to be rolled");
+                        "    the game client");
                     AddMsg("=========================");
 
                     string doneSound = Tesseract.Ocr.AssemblyCodeBaseDirectory + @"\Media\Sounds\Done.wav";
@@ -422,124 +446,183 @@ namespace EPW_Recaster
 
                 // ~ else continue checking ...
 
-                //int totalHits = 0;
                 bool conditionMet = false;
-                bool subConditionMet = false;
 
                 if (validEntry)
                 {
-                    // ----------------------------------
-                    // MATCH AGAINST REQUIRED CONDITIONS.
-                    // ----------------------------------
+                    #region Match Condition(s).
 
-                    #region Required condition(s) matching.
-                    AddMsg("=========================");
-                    AddMsg("[  Required Conditions  ]");
-
-                    Condition matchedCondition = null;
-
-                    foreach (Condition currCondition in conditions)
+                    for (int i = 0; i < conditionListEntries.Count(); i++)
                     {
-                        int hits = currEquipment.MatchStat(currCondition.ShortTerm);
-                        //totalHits += hits;
+                        //AddMsg("=========================");
+                        AddMsg(new RtMessage("[ Checking Condition List Entry " + (i + 1) + " ]", bold: true));
 
-                        AddMsg(
-                            "# '" + currCondition.LongTerm + "' detected: " + hits + " / " + currCondition.Amount + "."
-                            );
+                        conditionMet = true;
 
-                        if (!conditionMet) // Only when at least one condition hasn't already been met.
+                        // =====================
+                        // A. Fixed Amount Mode.
+                        // =====================
+
+                        #region Fixed Amount Mode.
+
+                        foreach (Condition currCondition in conditionListEntries[i])
                         {
-                            conditionMet = (hits >= Convert.ToInt32(currCondition.Amount)); // Check if current condition has been met.
+                            if (currCondition.Amount > 0)
+                            {
+                                int hits = currEquipment.MatchStat(currCondition.ShortTerm);
 
-                            // If current condition is met, store it for additional checks in subconditions (f.e. 5 x amount check).
-                            if (conditionMet)
-                                matchedCondition = currCondition;
+                                AddMsg(new RtMessage(
+                                    message:
+                                    (hits >= Convert.ToInt32(currCondition.Amount) ? "✓" : "❌") + " '" + currCondition.LongTerm + "': " + hits + " / " + currCondition.Amount,
+                                    color:
+                                    hits >= Convert.ToInt32(currCondition.Amount) ? GreenLightColor : OrangeLightColor,
+                                    indent: 3
+                                ));
 
-                            /*if (conditionMet)
-                                break;*/ // [DEVNOTE] Don't break for informative display purposes.
+                                if (conditionMet) // Only when at least one condition has already been met.
+                                {
+                                    conditionMet = (hits >= Convert.ToInt32(currCondition.Amount)); // Check if current condition has been met.
+                                }
+                            }
                         }
-                    }
-                    #endregion
 
-                    // ----------------------------------
-                    // MATCH AGAINST OPTIONAL CONDITIONS.
-                    // ----------------------------------
+                        #endregion Fixed Amount Mode.
 
-                    #region Additional condition(s) matching.
-                    // Only when at least one subcondition has been set
-                    // & one of required conditions is met.
-                    if (subConditions.Count > 0)
-                    {
-                        AddMsg("=========================");
-                        AddMsg("[ Additional Conditions ]");
+                        // ==============
+                        // B. Combo Mode.
+                        // ==============
+
+                        #region Combo Mode.
+
+                        string allowedComboStats = "";
+
+                        foreach (Condition currCondition in conditionListEntries[i])
+                        {
+                            if (currCondition.Amount == 0)
+                            {
+                                int hits = currEquipment.MatchStat(currCondition.ShortTerm);
+
+                                AddMsg(new RtMessage(
+                                    message:
+                                    (hits > 0 ? "✓" : "❌") + " '" + currCondition.LongTerm + "': " + hits,
+                                    color:
+                                    hits > 0 ? GreenLightColor : OrangeLightColor,
+                                    indent: 3
+                                ));
+
+                                if (conditionMet) // Only when at least one condition has already been met.
+                                {
+                                    conditionMet = (hits > 0); // Check if current condition has been met.
+
+                                    // Check if the current condition has been met.
+                                    // [DEVNOTE] conditionMet check not necessary here.
+                                    // Would break if set to false above and wouldn't enter the next step anyway.
+                                    allowedComboStats += currCondition.ShortTerm + " | ";
+                                }
+                            }
+                        }
+
+                        // -----------------------------------------------
+                        // Combo mode can not have any other stat combined
+                        // other than the ones in the condition entry.
+                        // -----------------------------------------------
+
+                        // Check current equipment stats against each config short term.
+                        // [DEVNOTE] If allowedComboStats isn't an empty string at this point,
+                        //           current condition list entry is a combo.
+                        //           Additionally, check if current condition has (still) been met.
+                        if (!string.IsNullOrEmpty(allowedComboStats) & conditionMet)
+                        {
+                            foreach (string[] currConfigTerm in cfgTerms)
+                            {
+                                // If not an allowed stat.
+                                if (!allowedComboStats.ToLower().Contains(currConfigTerm[1].ToLower()))
+                                {
+                                    int hits = currEquipment.MatchStat(currConfigTerm[1]);
+
+                                    // If a non allowed stat has been found in current equipment.
+                                    if (hits > 0)
+                                    {
+                                        conditionMet = false;
+                                    }
+                                }
+
+                                // Break the foreach loop if a non allowed stat was found
+                                // and notify.
+                                if (!conditionMet)
+                                {
+                                    AddMsg(new RtMessage(
+                                        message:
+                                        "❌ Non allowed combo stat detected:",
+                                        color:
+                                        OrangeLightColor,
+                                        indent: 3
+                                    ));
+                                    AddMsg(new RtMessage(
+                                         message:
+                                         "'" + currConfigTerm[0] + "'",
+                                         color:
+                                         OrangeLightColor,
+                                         indent: 7
+                                     ));
+
+                                    break;
+                                }
+                            }
+                        }
+
+                        #endregion Combo Mode.
 
                         if (conditionMet)
                         {
-                            // DO NOT CHECK WHEN MATCHED REQUIRED CONDITION HAS AN ALREADY MAXED AMOUNT OF STATS.
-                            if (matchedCondition.Amount != 5)
-                            {
-                                // For each set subcondition, check whether it matches.
-                                foreach (Condition currSubCondition in subConditions)
-                                {
-                                    int subHits = currEquipment.MatchStat(currSubCondition.ShortTerm);
-                                    //totalHits += hits;
-
-                                    AddMsg(
-                                        "# '" + currSubCondition.LongTerm + "' detected: " + subHits + " / " + currSubCondition.Amount + "."
-                                        );
-
-                                    if (!subConditionMet) // Only when at least one subcondition hasn't already been met.
-                                    {
-                                        subConditionMet = (subHits >= Convert.ToInt32(currSubCondition.Amount)); // Check if current subcondition has been met.
-
-                                        /*if(subConditionMet)
-                                            break;*/ // [DEVNOTE] Don't break for informative display purposes.
-                                    }
-                                }
-                            }
-                            else
-                            {
-                                subConditionMet = true;
-                                AddMsg("( Required condition already using 5 stats (max). Skipped. )");
-                            }
-                        }
-                        else
-                        {
-                            AddMsg("( Skipped. )");
+                            break;
                         }
                     }
-                    else
-                    {
-                        // If no subconditions were set, check as true.
-                        subConditionMet = true;
-                    }
-                    #endregion
 
                     // ---------------------
                     // LOG RESULTS/DECISION.
                     // ---------------------
 
-                    //AddMsg("=====" + Environment.NewLine + "Total hits: " + totalHits + "."); // [DEVNOTE] Per roll only, not overall. Hidden to avoid confusion.
                     AddMsg("=========================");
-                    AddMsg("• Conditions met: " + ((conditionMet & subConditionMet) ? "yes." : "no."));
+                    if (conditionListEntries.Count() > 1)
+                    {
+                        AddMsg(new RtMessage(
+                            message:
+                            "• " + (conditionMet ? "Condition met." : "No condition met."),
+                            color:
+                            conditionMet ? GreenLightColor : OrangeLightColor
+                            ));
+                    }
+                    else
+                    {
+                        AddMsg(new RtMessage(
+                            message:
+                            "• " + (conditionMet ? "Condition met." : "Condition hasn't been met."),
+                            color:
+                            conditionMet ? GreenLightColor : OrangeLightColor
+                            ));
+                    }
                     if (!InfoGui.PreviewCapture)
                     {
-                        if (conditionMet & subConditionMet)
+                        if (conditionMet)
                         {
-                            AddMsg("  => Accepting new attributes.");
+                            AddMsg(new RtMessage("=> Accepting new attributes.", color: GreenLightColor, indent: 3));
                         }
                         else
                         {
-                            AddMsg("  => Retaining old attributes.");
+                            AddMsg(new RtMessage("=> Retaining old attributes.", indent: 3));
                         }
                     }
+
+                    #endregion Match Condition(s).
                 }
 
                 if (!InfoGui.PreviewCapture)
                 {
                     AddMsg("• Number of rolls: " + nrRolls.ToString() + " / " + maxNrRolls.ToString() + ".");
                 }
-                #endregion
+
+                #endregion Judge conditions.
 
                 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -565,6 +648,7 @@ namespace EPW_Recaster
                 // =============
 
                 #region Perform actions based on matching decision.
+
                 if (!InfoGui.PreviewCapture & keepRunning) // [DEVNOTE] keepRunning could have been set to false in history check.
                 {
                     // Wait for a bit before rejecting or accepting current roll.
@@ -572,7 +656,7 @@ namespace EPW_Recaster
 
                     Ocr_Token.ThrowIfCancellationRequested();
 
-                    if (conditionMet & subConditionMet)
+                    if (conditionMet)
                     {
                         // Accept the new attributes.
                         MoveMouse((uint)NewClickPoint.X, (uint)NewClickPoint.Y);
@@ -622,10 +706,11 @@ namespace EPW_Recaster
                 {
                     keepRunning = false;
                 }
-                #endregion
+
+                #endregion Perform actions based on matching decision.
             }
 
-            #endregion
+            #endregion Main roll loop.
         }
 
         private System.Drawing.Image ResizeImage(System.Drawing.Image imgToResize, double scaleFactor = 2)
@@ -649,14 +734,6 @@ namespace EPW_Recaster
             return (System.Drawing.Image)b;
         }
 
-        [DllImport("user32.dll", CharSet = CharSet.Auto, CallingConvention = CallingConvention.StdCall)]
-        public static extern void mouse_event(uint dwFlags, uint dx, uint dy, uint cButtons, uint dwExtraInfo);
-        // Mouse actions.
-        private const int MOUSEEVENTF_LEFTDOWN = 0x02;
-        private const int MOUSEEVENTF_LEFTUP = 0x04;
-        private const int MOUSEEVENTF_RIGHTDOWN = 0x08;
-        private const int MOUSEEVENTF_RIGHTUP = 0x10;
-
         public void DoLeftMouseClick(uint posX, uint posY)
         {
             // Call the imported function with the cursor's current position.
@@ -670,17 +747,17 @@ namespace EPW_Recaster
             Thread.Sleep(50);
 
             // Refocus InfoGui (in order for Esc key capture to work without having to do a keyboard hook).
-            if (InfoGui.InvokeRequired)
-            {
-                InfoGui.BeginInvoke(new MethodInvoker(delegate
-                {
-                    InfoGui.Focus();
-                }));
-            }
-            else
-            {
-                InfoGui.Focus();
-            }
+            //if (InfoGui.InvokeRequired)
+            //{
+            //    InfoGui.BeginInvoke(new MethodInvoker(delegate
+            //    {
+            //        InfoGui.Focus();
+            //    }));
+            //}
+            //else
+            //{
+            //    InfoGui.Focus();
+            //}
         }
 
         //public void MoveMouse(uint posX, uint posY)
@@ -691,6 +768,18 @@ namespace EPW_Recaster
         //    Thread.Sleep(50);
         //}
 
+        #region Low Level Methods.
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto, CallingConvention = CallingConvention.StdCall)]
+        public static extern void mouse_event(uint dwFlags, uint dx, uint dy, uint cButtons, uint dwExtraInfo);
+
+        // Mouse actions.
+        private const int MOUSEEVENTF_LEFTDOWN = 0x02;
+
+        private const int MOUSEEVENTF_LEFTUP = 0x04;
+        private const int MOUSEEVENTF_RIGHTDOWN = 0x08;
+        private const int MOUSEEVENTF_RIGHTUP = 0x10;
+
         [DllImport("User32.Dll")]
         public static extern long SetCursorPos(int x, int y);
 
@@ -699,5 +788,9 @@ namespace EPW_Recaster
             SetCursorPos((int)posX, (int)posY);
             Thread.Sleep(50);
         }
+
+        #endregion Low Level Methods.
+
+        #endregion Methods.
     }
 }

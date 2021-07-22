@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("EPW Recaster")]
-[assembly: AssemblyDescription("Automates EPW equipment restatting.")]
+[assembly: AssemblyDescription("EPW Auto Equipment Roller")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Kim Debroye")]
 [assembly: AssemblyProduct("EPW Recaster")]
@@ -33,6 +33,6 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("2.0.0.0")]
-[assembly: AssemblyFileVersion("2.0.0.0")]
+[assembly: AssemblyVersion("3.1.0.0")]
+[assembly: AssemblyFileVersion("3.1.0.0")]
 [assembly: NeutralResourcesLanguage("")]

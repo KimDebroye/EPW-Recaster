@@ -6,29 +6,41 @@ namespace EPW_Recaster
     {
         public string Message { get; set; } = null;
 
-        public Color Color { get; set; } = new Color();
+        public Color Color { get; set; } = new Color(); // Default color.
 
-        public RtMessage(string message, Color color)
+        public bool CustomColor { get; set; } = false;
+        public bool Bold { get; set; } = false;
+
+        public RtMessage(string message, Color color, bool bold = false, int indent = 0)
         {
-            Message = message;
+            Message = new string(' ', indent) + message; // Indent (if applicable) and set message.
             Color = color;
-        }
-        public RtMessage(string message, string color)
-        {
-            Message = message;
-            try
-            {
-                Color = Color.FromName(color);
-            }
-            catch (System.Exception e)
-            {
-                throw e;
-            }
+            CustomColor = true;
+            Bold = bold;
         }
 
-        public RtMessage(string message)
+        public RtMessage(string message, string color = "", bool bold = false, int indent = 0)
         {
-            Message = message;
+            Message = new string(' ', indent) + message; // Indent (if applicable) and set message.
+
+            if (!string.IsNullOrEmpty(color))
+            {
+                try
+                {
+                    Color = Color.FromName(color);
+                }
+                catch
+                {
+                    // Ignore given color.
+                    CustomColor = false;
+                }
+            }
+            else
+            {
+                CustomColor = false;
+            }
+
+            Bold = bold;
         }
     }
 }

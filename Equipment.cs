@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -27,7 +26,7 @@ namespace EPW_Recaster
             Identifier = identifier;
         }
 
-        public Stat(string identifier, string value, string separator = "", bool isWeaponStat = false)
+        public Stat(string identifier, string value, string separator = "")
         {
             Identifier = identifier;
             Separator = separator;
@@ -38,6 +37,7 @@ namespace EPW_Recaster
     internal class Equipment
     {
         private string ocrText;
+
         public string OcrText
         {
             get
@@ -58,7 +58,8 @@ namespace EPW_Recaster
                     Replace("Old:", "").
                     Replace("Old", "").
                     Replace("New:", "").
-                    Replace("New", "");
+                    Replace("New", "").
+                    Replace("increase your Speed", "increase your pace"); // Part of 'Purify' description containing Speed, which is also a stat, hence replacing.
 
                 string cleanedUpText = "";
 
@@ -116,7 +117,7 @@ namespace EPW_Recaster
 
                             // [DEVNOTE] May be too destructive.
                             //           (in f.e. Preview Mode when a tiny bit of in-game left scroll UI elements are captured, data is scambled up)
-                            /* 
+                            /*
                             // -------
                             // CLEANUP
                             // -------
@@ -200,12 +201,12 @@ namespace EPW_Recaster
                 // keeping only the non blue stats.
                 if (blueStats.Count() > 0)
                 {
-                    for(int i=0; i < blueStats.Count(); i++)
+                    for (int i = 0; i < blueStats.Count(); i++)
                     {
                         allStats.RemoveAt(i);
                     }
                 }
-                
+
                 return allStats;
             }
         }

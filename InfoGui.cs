@@ -2,13 +2,7 @@
 using MetroFramework;
 using MetroFramework.Forms;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,11 +11,17 @@ namespace EPW_Recaster
 {
     public partial class InfoGui : MetroForm
     {
+        #region Variables | Properties.
+
         private MainGui MainForm { get; set; }
 
-        internal bool FormsChained { get; set; }
+        internal bool FormsChained { get; set; } = true;
 
         internal bool PreviewCapture { get; set; }
+
+        #endregion Variables | Properties.
+
+        #region Constructors | Initialization Methods.
 
         public InfoGui()
         {
@@ -53,9 +53,15 @@ namespace EPW_Recaster
             toolTip.SetToolTip(chkbxPreviewCapture, "\r\nℹ\r\nWhen checked, will only\r\nperform a single capture.\r\nNo rolls will be\r\nperformed in-game.\r\n ");
         }
 
+        #endregion Constructors | Initialization Methods.
+
+        #region Events.
+
         private async void btnOcr_Click(object sender, EventArgs e)
         {
-            if (MainForm.lvConditions.Items.Count > 0)
+            pbLogo.Visible = false;
+
+            if (MainForm.dgConditions.Rows.Count > 0)
             {
                 if (btnOcr.Text.Contains("Start"))
                 {
@@ -96,11 +102,20 @@ namespace EPW_Recaster
                         DateTime currTime = DateTime.Now;
                         TimeSpan diffResult = currTime.Subtract(MainForm.Ocr_StartTime);
 
-                        rTxtBoxInfo.AppendText(Environment.NewLine + Environment.NewLine);
+                        rTxtBoxInfo.AppendText(Environment.NewLine);
+                        rTxtBoxInfo.AppendText("=========================");
+                        rTxtBoxInfo.AppendText(Environment.NewLine);
                         rTxtBoxInfo.AppendText("Process completed.");
                         rTxtBoxInfo.AppendText(Environment.NewLine);
                         rTxtBoxInfo.AppendText("Runtime: " + diffResult.Humanize(3) + ".");
                         rTxtBoxInfo.AppendText(Environment.NewLine + Environment.NewLine);
+
+                        // Auto scroll to bottom.
+                        if (chkbxAutoScrollBottom.Checked)
+                        {
+                            rTxtBoxInfo.SelectionStart = rTxtBoxInfo.TextLength;
+                            rTxtBoxInfo.ScrollToCaret();
+                        }
 
                         // Reset button to 'Start'.
                         btnOcr.Text = "Start";
@@ -114,11 +129,20 @@ namespace EPW_Recaster
                         DateTime currTime = DateTime.Now;
                         TimeSpan diffResult = currTime.Subtract(MainForm.Ocr_StartTime);
 
-                        rTxtBoxInfo.AppendText(Environment.NewLine + Environment.NewLine);
+                        rTxtBoxInfo.AppendText(Environment.NewLine);
+                        rTxtBoxInfo.AppendText("=========================");
+                        rTxtBoxInfo.AppendText(Environment.NewLine);
                         rTxtBoxInfo.AppendText("Process halted.");
                         rTxtBoxInfo.AppendText(Environment.NewLine);
                         rTxtBoxInfo.AppendText("Runtime: " + diffResult.Humanize(3) + ".");
                         rTxtBoxInfo.AppendText(Environment.NewLine + Environment.NewLine);
+
+                        // Auto scroll to bottom.
+                        if (chkbxAutoScrollBottom.Checked)
+                        {
+                            rTxtBoxInfo.SelectionStart = rTxtBoxInfo.TextLength;
+                            rTxtBoxInfo.ScrollToCaret();
+                        }
 
                         btnOcr.Text = "Start";
                         btnOcr.Enabled = true;
@@ -133,11 +157,20 @@ namespace EPW_Recaster
                         DateTime currTime = DateTime.Now;
                         TimeSpan diffResult = currTime.Subtract(MainForm.Ocr_StartTime);
 
-                        rTxtBoxInfo.AppendText(Environment.NewLine + Environment.NewLine);
+                        rTxtBoxInfo.AppendText(Environment.NewLine);
+                        rTxtBoxInfo.AppendText("=========================");
+                        rTxtBoxInfo.AppendText(Environment.NewLine);
                         rTxtBoxInfo.AppendText(ex.GetType().Name + ": " + ex.Message);
                         rTxtBoxInfo.AppendText(Environment.NewLine);
                         rTxtBoxInfo.AppendText("Runtime: " + diffResult.Humanize(3) + ".");
                         rTxtBoxInfo.AppendText(Environment.NewLine + Environment.NewLine);
+
+                        // Auto scroll to bottom.
+                        if (chkbxAutoScrollBottom.Checked)
+                        {
+                            rTxtBoxInfo.SelectionStart = rTxtBoxInfo.TextLength;
+                            rTxtBoxInfo.ScrollToCaret();
+                        }
 
                         if (MainForm.Ocr_CancellationTokenSource != null)
                             MainForm.Ocr_CancellationTokenSource.Cancel();
@@ -148,7 +181,7 @@ namespace EPW_Recaster
                         MainForm.WindowState = FormWindowState.Normal;
                     }
 
-                    #endregion
+                    #endregion Start Ocr.
                 }
                 else
                 {
@@ -160,25 +193,19 @@ namespace EPW_Recaster
                     if (MainForm.Ocr_CancellationTokenSource != null)
                         MainForm.Ocr_CancellationTokenSource.Cancel();
 
-                    #endregion
+                    #endregion Stop Ocr.
                 }
             }
             else
             {
-                MetroFramework.MetroMessageBox.Show(MainForm, "\n\n" +
+                MetroFramework.MetroMessageBox.Show(MainForm,
                                 "Please add at least one condition to look for.\n" +
-                                "1. Select preferred amount of stat to look for ( f.e. '2 x' ).\n" +
-                                "2. Select the stat to be looked for ( f.e. 'Channelling' ).\n" +
+                                "1. Select a preferred amount and stat ( f.e. '2 x Channelling' ).\n" +
+                                "2. (Optional) Select additional amount(s) and stat(s).\n" +
                                 "3. Click the ➕ button.",
-                                "Note",
+                                "", // Note
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-        }
-
-        private void rTxtBoxInfo_TextChanged(object sender, EventArgs e)
-        {
-            // Trim any newlines in front.
-            this.rTxtBoxInfo.Text = this.rTxtBoxInfo.Text.TrimStart('\r', '\n');
         }
 
         private void btnChainForms_Click(object sender, EventArgs e)
@@ -231,7 +258,7 @@ namespace EPW_Recaster
                     this.btnChainForms.Text = "▉      ▉";
 
                     FormsChained = false;
-                } 
+                }
             }
 
             MainForm.SetInfoGuiSizeAndPosition();
@@ -257,14 +284,14 @@ namespace EPW_Recaster
             System.Diagnostics.Process.Start(logPath);
         }
 
-        private void InfoGui_Load(object sender, EventArgs e)
-        {
-            btnOcr.Focus();
-        }
-
         private void rTxtBoxInfo_MouseClick(object sender, MouseEventArgs e)
         {
             MainForm.lblAmount.Focus();
+        }
+
+        private void InfoGui_Load(object sender, EventArgs e)
+        {
+            btnOcr.Focus();
         }
 
         private void InfoGui_SizeChanged(object sender, EventArgs e)
@@ -301,7 +328,7 @@ namespace EPW_Recaster
             else
             {
                 PreviewCapture = false;
-                chkbxPreviewCapture.Text = "Preview";
+                chkbxPreviewCapture.Text = "Preview ?";
 
                 // Show number of rolls when not in preview mode.
                 lblMaxRolls.Visible = true;
@@ -313,7 +340,7 @@ namespace EPW_Recaster
 
             if (MainForm != null)
             {
-                MainForm.SetCaptureRegion(); 
+                MainForm.SetCaptureRegion();
             }
         }
 
@@ -325,9 +352,6 @@ namespace EPW_Recaster
             lblMaxRolls.Focus();
         }
 
-        private void numMaxRolls_Enter(object sender, EventArgs e)
-        {
-
-        }
+        #endregion Events.
     }
 }

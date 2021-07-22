@@ -37,7 +37,10 @@ namespace EPW_Recaster
             this.lblMaxRolls = new MetroFramework.Controls.MetroLabel();
             this.btnLogFolder = new MetroFramework.Controls.MetroButton();
             this.toolTip = new MetroFramework.Components.MetroToolTip();
+            this.chkbxAutoScrollBottom = new MetroFramework.Controls.MetroCheckBox();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.numMaxRolls)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // rTxtBoxInfo
@@ -50,16 +53,15 @@ namespace EPW_Recaster
             this.rTxtBoxInfo.Margin = new System.Windows.Forms.Padding(15, 30, 15, 15);
             this.rTxtBoxInfo.Name = "rTxtBoxInfo";
             this.rTxtBoxInfo.ReadOnly = true;
-            this.rTxtBoxInfo.Size = new System.Drawing.Size(250, 115);
+            this.rTxtBoxInfo.Size = new System.Drawing.Size(250, 210);
             this.rTxtBoxInfo.TabIndex = 2;
             this.rTxtBoxInfo.Text = "";
             this.rTxtBoxInfo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.rTxtBoxInfo_MouseClick);
-            this.rTxtBoxInfo.TextChanged += new System.EventHandler(this.rTxtBoxInfo_TextChanged);
             // 
             // btnOcr
             // 
             this.btnOcr.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOcr.Location = new System.Drawing.Point(220, 203);
+            this.btnOcr.Location = new System.Drawing.Point(220, 298);
             this.btnOcr.Name = "btnOcr";
             this.btnOcr.Size = new System.Drawing.Size(55, 23);
             this.btnOcr.TabIndex = 3;
@@ -82,11 +84,11 @@ namespace EPW_Recaster
             // 
             this.chkbxPreviewCapture.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.chkbxPreviewCapture.AutoSize = true;
-            this.chkbxPreviewCapture.Location = new System.Drawing.Point(23, 207);
+            this.chkbxPreviewCapture.Location = new System.Drawing.Point(23, 302);
             this.chkbxPreviewCapture.Name = "chkbxPreviewCapture";
-            this.chkbxPreviewCapture.Size = new System.Drawing.Size(64, 15);
+            this.chkbxPreviewCapture.Size = new System.Drawing.Size(72, 15);
             this.chkbxPreviewCapture.TabIndex = 5;
-            this.chkbxPreviewCapture.Text = "Preview";
+            this.chkbxPreviewCapture.Text = "Preview ?";
             this.chkbxPreviewCapture.UseSelectable = true;
             this.chkbxPreviewCapture.CheckStateChanged += new System.EventHandler(this.chkbxPreviewCapture_CheckStateChanged);
             // 
@@ -95,7 +97,7 @@ namespace EPW_Recaster
             this.numMaxRolls.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.numMaxRolls.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numMaxRolls.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numMaxRolls.Location = new System.Drawing.Point(165, 204);
+            this.numMaxRolls.Location = new System.Drawing.Point(165, 299);
             this.numMaxRolls.Maximum = new decimal(new int[] {
             999,
             0,
@@ -122,7 +124,7 @@ namespace EPW_Recaster
             this.lblMaxRolls.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMaxRolls.FontSize = MetroFramework.MetroLabelSize.Small;
             this.lblMaxRolls.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblMaxRolls.Location = new System.Drawing.Point(93, 203);
+            this.lblMaxRolls.Location = new System.Drawing.Point(93, 298);
             this.lblMaxRolls.Name = "lblMaxRolls";
             this.lblMaxRolls.Size = new System.Drawing.Size(72, 22);
             this.lblMaxRolls.TabIndex = 15;
@@ -146,12 +148,38 @@ namespace EPW_Recaster
             this.toolTip.StyleManager = null;
             this.toolTip.Theme = MetroFramework.MetroThemeStyle.Default;
             // 
+            // chkbxAutoScrollBottom
+            // 
+            this.chkbxAutoScrollBottom.AutoSize = true;
+            this.chkbxAutoScrollBottom.Checked = true;
+            this.chkbxAutoScrollBottom.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkbxAutoScrollBottom.Location = new System.Drawing.Point(151, 51);
+            this.chkbxAutoScrollBottom.Name = "chkbxAutoScrollBottom";
+            this.chkbxAutoScrollBottom.Size = new System.Drawing.Size(124, 15);
+            this.chkbxAutoScrollBottom.TabIndex = 17;
+            this.chkbxAutoScrollBottom.Text = "Auto Bottom Scroll";
+            this.chkbxAutoScrollBottom.UseSelectable = true;
+            this.chkbxAutoScrollBottom.Visible = false;
+            // 
+            // pbLogo
+            // 
+            this.pbLogo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbLogo.Location = new System.Drawing.Point(90, 71);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(120, 115);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLogo.TabIndex = 18;
+            this.pbLogo.TabStop = false;
+            // 
             // InfoGui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(300, 255);
+            this.ClientSize = new System.Drawing.Size(300, 350);
             this.ControlBox = false;
+            this.Controls.Add(this.pbLogo);
+            this.Controls.Add(this.chkbxAutoScrollBottom);
             this.Controls.Add(this.btnLogFolder);
             this.Controls.Add(this.numMaxRolls);
             this.Controls.Add(this.lblMaxRolls);
@@ -173,6 +201,7 @@ namespace EPW_Recaster
             this.LocationChanged += new System.EventHandler(this.InfoGui_LocationChanged);
             this.SizeChanged += new System.EventHandler(this.InfoGui_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.numMaxRolls)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -188,5 +217,7 @@ namespace EPW_Recaster
         internal System.Windows.Forms.NumericUpDown numMaxRolls;
         internal MetroFramework.Controls.MetroButton btnLogFolder;
         internal MetroFramework.Components.MetroToolTip toolTip;
+        internal MetroFramework.Controls.MetroCheckBox chkbxAutoScrollBottom;
+        internal System.Windows.Forms.PictureBox pbLogo;
     }
 }

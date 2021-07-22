@@ -19,7 +19,8 @@ namespace Tesseract
                 VersionPath + @"tesseract.exe"
             );
 
-        public static string Version {
+        public static string Version
+        {
             get
             {
                 return VersionPath.Split('\\')[1].Trim(); // f.e. 5 (Alpha)
