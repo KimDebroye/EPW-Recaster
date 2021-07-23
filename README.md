@@ -111,9 +111,10 @@ ___
 
 ___
 
-#### 1-4-1. Fixed Amount Stats
+#### 1-4-1. Fixed Amount Stat(s)
 
-![Fixed Amount Stats](https://i.snipboard.io/6YN19T.jpg)
+![Fixed Amount Stat](https://i.snipboard.io/6YN19T.jpg)
+![Fixed Amount Stats](https://i.snipboard.io/fOHrqN.jpg)
 
 - > **Although `REQUIRING A FIXED AMOUNT` of a preferred single or grouped stat,<br />rolled results `CAN HAVE ANY OTHER STAT`**.
 - **Will accept a roll if**
@@ -126,7 +127,7 @@ ___
 - Mainly used for rolls:
   - having equal stats:
     - _`4 x Interval Between Hits`_
-  - needing a certain amount of stats:
+  - needing at least a certain amount of stats:
     - _at least `2 x Channelling` ( and/or `any other stat rolled`_ )
     - ...
 
@@ -156,7 +157,9 @@ ___
 
 | Condition | Would Accept | Would Reject |
 | :--- | :--- | :--- |
-| ![Fixed Amount Stats](https://i.snipboard.io/6YN19T.jpg) | ✅<br />*<sub><sup>• Channelling -3%<br/>• Channelling -2%<br/>• Channelling -3%<br />• Channelling -2%</sup></sub>*<hr />✅<br />*<sub><sup>• Channelling -3%<br />• Magic +9<br />• Channelling -2%<br />• Reduce Physical Damage Taken +2%</sup></sub>*<hr />✅<br />*<sub><sup>• Channelling -3%<br/>• Channelling -2%<br/>• Channelling -3%<br />• Magic +9</sup></sub>* | ❌<br />*<sub><sup>• Channelling -3%<br />• Magic +9<br/>• Magic +10<br />• Reduce Physical Damage Taken +2%</sup></sub>*<hr />❌<br />*<sub><sup>• Reduce Physical Damage Taken +2%<br />• Reduce Physical Damage Taken +1%<br/>• Reduce Physical Damage Taken +2%<br />• Reduce Physical Damage Taken +2%</sup></sub>*<hr />❌<br />*<sub><sup>• Channelling -3%<br />• Reduce Physical Damage Taken +1%<br/>• Reduce Physical Damage Taken +2%<br />• Reduce Physical Damage Taken +2%</sup></sub>* |
+| ![Fixed Amount Stat](https://i.snipboard.io/6YN19T.jpg) | ✅<br />*<sub><sup>• Channelling -3%<br/>• Channelling -2%<br/>• Channelling -3%<br />• Channelling -2%</sup></sub>*<hr />✅<br />*<sub><sup>• Channelling -3%<br />• Magic +9<br />• Channelling -2%<br />• Reduce Physical Damage Taken +2%</sup></sub>*<hr />✅<br />*<sub><sup>• Channelling -3%<br/>• Channelling -2%<br/>• Channelling -3%<br />• Magic +9</sup></sub>* | ❌<br />*<sub><sup>• Channelling -3%<br />• Magic +9<br/>• Magic +10<br />• Reduce Physical Damage Taken +2%</sup></sub>*<hr />❌<br />*<sub><sup>• Reduce Physical Damage Taken +2%<br />• Reduce Physical Damage Taken +1%<br/>• Reduce Physical Damage Taken +2%<br />• Reduce Physical Damage Taken +2%</sup></sub>*<hr />❌<br />*<sub><sup>• Channelling -3%<br />• Reduce Physical Damage Taken +1%<br/>• Reduce Physical Damage Taken +2%<br />• Reduce Physical Damage Taken +2%</sup></sub>* |
+| | | |
+| ![Fixed Amount Stats](https://i.snipboard.io/fOHrqN.jpg) | ✅<br />*<sub><sup>• Reduce Physical Damage Taken +2%<br/>• Channelling -2%<br/>• Reduce Physical Damage Taken +2%<br />• Channelling -2%</sup></sub>* | ❌<br />*<sub><sup>• Channelling -3%<br />• Channelling -2%<br/>• Channelling -3%<br />• Channelling -1%</sup></sub>*<hr />❌<br />*<sub><sup>• Channelling -3%<br />• Channelling -1%<br/>• Channelling -3%<br />• Reduce Physical Damage Taken +2%</sup></sub>*<hr />❌<br />*<sub><sup>• Channelling -3%<br />• Magic +9<br/>• Magic +10<br />• Reduce Physical Damage Taken +2%</sup></sub>* |
 | | | |
 | ![Combo Stats](https://i.snipboard.io/2W7pMU.jpg) | ✅<br />*<sub><sup>• Channelling -3%<br />• Reduce Physical Damage Taken +1%<br />• Channelling -2%<br />• Reduce Physical Damage Taken +2%</sup></sub>*<hr />✅<br />*<sub><sup>• Channelling -3%<br />• Channelling -2%<br />• Channelling -2%<br />• Reduce Physical Damage Taken +2%</sup></sub>*<hr />✅<br />*<sub><sup>• Reduce Physical Damage Taken +2%<br />• Reduce Physical Damage Taken +1%<br />• Reduce Physical Damage Taken +2%<br />• Channelling -3%</sup></sub>* | ❌<br />*<sub><sup>• Channelling -3%<br />• Channelling -2%<br/>• Channelling -3%<br />• Channelling -3%</sup></sub>*<hr />❌<br />*<sub><sup>• Channelling -3%<br />• Channelling -3%<br />• Magic +9<br/>• Channelling -2%</sup></sub>*<hr />❌<br />*<sub><sup>• Channelling -3%<br />• Channelling -3%<br />• Magic +9<br/>• Reduce Physical Damage Taken +2%</sup></sub>* |
 
