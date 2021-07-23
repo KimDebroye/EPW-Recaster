@@ -153,7 +153,7 @@ ___
 
 ___
 
-#### 1-4-3. Comparative Examples
+#### 1-4-3. Comparative Condition List Examples
 
 | Condition | Would Accept | Would Reject |
 | :--- | :--- | :--- |
