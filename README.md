@@ -170,7 +170,7 @@ ___
 ![Condition Entry](https://i.snipboard.io/BbaM3T.jpg)
 
 > **❗ IMPORTANT NOTE ❗**<br />
-> **Always put some thought in which rolled stats would be preferred and add all-encompassing conditions for those<br />in order not to miss out on any good rolls.**
+> **Always put some thought in which rolled stats would be preferred and<br />add all-encompassing conditions accordingly<br />in order not to miss out on any good rolls.**
 
 - In order to enlist a roll condition:
   - Select a preferred amount and preferred stat to be found.
