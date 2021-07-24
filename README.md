@@ -255,8 +255,11 @@ ___
     - **[ Developer Note ]** This fixed it for most I've been chatting with that had this issue.<br />If many encounter this, I may include code in an update<br />to elevate administrative privileges programmatically ( _hoping it would skip the manual fix_ ).
   - **Additionally, make sure the capture region has been sized/positioned correctly.**
 - **It does click/reproduce a roll but still stops a batch roll after a short while.**
-  - **May as well be a timing issue.** Even though the most recent release already has all timings increased and I personally don't think this would still be needed, on older or *trying-to-avoid-what-fries-and-chips-are-made-of-word computers* a solution may be to increase timings even a little more ( _add about 500~xxxx milliseconds to timings of choice_ ).<br />Check [ [ 2-4. Preview | Roll Mode ](#2-4-preview--roll-mode) ] for the config file location.
+  - **May as well be a timing issue.** Even though the most recent release already has all timings increased and I personally don't think this would still be needed, on older or *trying-to-avoid-what-fries-and-chips-are-made-of-word computers* a solution may be to increase timings even a little more ( _add about 500~xxxx milliseconds to timings of choice_ ).
+    - Check [ [ 2-4. Preview | Roll Mode ](#2-4-preview--roll-mode) ] for the timings config file location.
 - **Inform me when the above does not provide a solution to the issue.**
+
+<hr />
 
 </details>
 
@@ -267,8 +270,11 @@ ___
 
 ➥ **Answer**:
 - **It did not meet any requirements set in the condition list.**<br />Always put some thought in which rolled stats would be preferred and add all-encompassing conditions for those.
-- **Another probability could be the roll contained a unique stat with a long description.**<br />Check [ [ 1.1. See-through Region ](#1-1-see-through-region) ] for more information.
+- **Another probability could be the roll contained a unique stat with a long description.**
+  - Check [ [ 1.1. See-through Region ](#1-1-see-through-region) ] for more information.
 - **Inform me with detailed information ( *and if possible steps to reproduce* )<br />if you think any of the above aren't the reason.<br />I would consider such a priority fix.**
+
+<hr />
 
 </details>
 
