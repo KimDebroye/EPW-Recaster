@@ -28,7 +28,7 @@ ___
 - Extract the contents of the provided package<br />to any folder that has write privileges.<br />( *f.e.* `Desktop` | `C:\Apps\EPW Recaster` | ... )
 - Launch `EPW Recaster(.exe)`.
 
-### ❗ Additional Prerequisites ( *in order for the tool to run properly* ) ❗
+### ❗ Additional Setup Prerequisites ❗
 - **This tool may require administrative privileges due to low-level actions used**<br />( *f.i. moving/clicking mouse*, ... ).
   - **Steps to check/enable administrative privileges** :
     - Right-click `EPW Recaster(.exe)` and<br />choose `Properties`.
