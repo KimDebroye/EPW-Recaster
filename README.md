@@ -40,7 +40,7 @@ ___
   - **Steps to check/change Windows Display Scaling**<br />( *Windows 10 / Other Windows versions: use Google* ) :
     - Right-click anywhere on desktop and<br />choose `Display Settings`.
     - Make sure the Scale and layout setting is set to `100%` and<br />close the window.<br />
-      ![Windows 10 Display Scaling](https://i.snipboard.io/PQ0t5u.jpg)
+      ![Windows 10 Display Scaling](https://i.snipboard.io/aMzD0F.jpg)
 
 </details>
 
