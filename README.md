@@ -16,7 +16,7 @@ EPW Recaster is a tool that
 
 ___
 
-## TL;DR QuickStart Video Demonstration/Guide
+## TL;DR QuickStart Video
 
 ### Version 3.1
 [![EPW Recaster ~ Demonstration Video](https://i.snipboard.io/iB6j5q.jpg)](https://youtu.be/i75cPTjQQ6Q)
@@ -25,7 +25,7 @@ ___
 
 ## Useful Quick Links
 
-|  |  |  |  |  |
+| ## TL;DR QuickStart Video |  |  |  |  |
 | :--- | :--- | :--- | :--- | :--- |
 | [Setup](#setup) | [Main Setup Form](##1--main--setup-form) | [Setup](#setup) | [Comparative Condition List Entry Examples](##1-4-3-comparative-condition-list-examples) | [FAQ](#faq) |
 |  |  |  |  |  |
