@@ -29,15 +29,15 @@ ___
 - Launch `EPW Recaster(.exe)`.
 
 > **❗ Additional Prerequisites ( *in order for the tool to run properly* ) ❗**
-> - **This tool may require administrative privileges due to low-level actions used**<br />( *f.i. moving/clicking mouse*, ... ).
->   - **Steps to check/enable administrative privileges** :
->     - Right-click `EPW Recaster(.exe)` and<br />choose `Properties`.
->     - In `Compatibility` tab,<br />check `☑ Run this program as an administrator`<br />and confirm by clicking `OK`.
-> - **This tool requires Windows Display Scaling to be set to `100%`<br />for a correct screen capture behavior**.
->   - **Steps to check/change Windows Display Scaling**<br />( *Windows 10 / Other Windows versions: use Google* ) :
->     - Right-click anywhere on desktop and<br />choose `Display Settings`.
->     - Make sure the Scale and layout setting is set to `100%` and<br />close the window.<br />
->       ![Windows 10 Display Scaling](https://i.snipboard.io/PQ0t5u.jpg)
+- **This tool may require administrative privileges due to low-level actions used**<br />( *f.i. moving/clicking mouse*, ... ).
+  - **Steps to check/enable administrative privileges** :
+    - Right-click `EPW Recaster(.exe)` and<br />choose `Properties`.
+    - In `Compatibility` tab,<br />check `☑ Run this program as an administrator`<br />and confirm by clicking `OK`.
+- **This tool requires Windows Display Scaling to be set to `100%`<br />for a correct screen capture behavior**.
+  - **Steps to check/change Windows Display Scaling**<br />( *Windows 10 / Other Windows versions: use Google* ) :
+    - Right-click anywhere on desktop and<br />choose `Display Settings`.
+    - Make sure the Scale and layout setting is set to `100%` and<br />close the window.<br />
+      ![Windows 10 Display Scaling](https://i.snipboard.io/PQ0t5u.jpg)
 
 ___
 
