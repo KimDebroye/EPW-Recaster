@@ -23,6 +23,13 @@ ___
 
 ___
 
+## Useful Quick Links
+
+| :--- | :--- | :--- | :--- | :--- |
+| [Setup](#setup) | [Main Setup Form](##1--main--setup-form) | [Setup](#setup) | [Comparative Condition List Entry Examples](##1-4-3-comparative-condition-list-examples) | [FAQ](#faq)  |
+
+___
+
 ## Setup
 
 - Extract the contents of the provided package<br />to any folder that has write privileges.<br />( *f.e.* `Desktop` | `C:\Apps\EPW Recaster` | ... )
@@ -296,7 +303,7 @@ ___
 - **A good and up-to-date reference on roll chances per stat/gear** can be found here:<br />
   [EPW Forum ~ R8 Recast Add-On Guide](https://epicpw.com/index.php?topic=2172.0).
 - As for the tool, it doesn't increase chances in any way.<br />
-  Legend goes inf once wrote this tool only takes away the boring part from rolling ;).
+  Legend goes *`inf`* once wrote this tool only takes away the boring part from rolling ;).
 
 </details>
 
