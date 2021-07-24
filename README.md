@@ -243,12 +243,11 @@ ___
 
 ## FAQ
 
-**<details><summary>` [ (Show|Hide Question|Answer ) "The tool doesn't seem to work for me ... what do I do, doc ?" ] `</summary>**
+**<details><summary>` [ (Show|Hide Answer) "The tool doesn't seem to work for me ... what do I do, doc ?" ] `</summary>**
 
-> **Question: "The tool doesn't seem to work for me ... what do I do, doc ?**"<br />
 > **Symptoms**: "_No valid roll information detected (yet)._" | "_... doesn't seem necessary to roll any further ... halted ..._" | ...
 
-➥ **Answer**:
+> ➥ **Answer**:
 - **In general, each capture/roll produces a logged text and image file that may be worth checking<br />in case it would be an OCR related issue.**<br />Check [ 2.2. Log Folder ](#2-2-log-folder) for more information.
 - **It doesn't click/reproduce a roll.**
   - **It's most certainly an admin privilege issue.**<br />Check [ [ Setup > Developer Note ](#setup) ] for instructions on how to enable administrative privileges.
@@ -264,11 +263,9 @@ ___
 </details>
 
 
-**<details><summary>` [ (Show|Hide Question|Answer ) "Why did the tool skip a very exotic roll ?" ] `</summary>**
+**<details><summary>` [ (Show|Hide Answer) "Why did the tool skip a very exotic roll ?" ] `</summary>**
 
-> **Question: "Why did the tool skip a very exotic roll ?**"
-
-➥ **Answer**:
+> ➥ **Answer**:
 - **It did not meet any requirements set in the condition list.**<br />Always put some thought in which rolled stats would be preferred and add all-encompassing conditions for those.
 - **Another probability could be the roll contained a unique stat with a long description.**
   - Check [ [ 1.1. See-through Region ](#1-1-see-through-region) ] for more information.
@@ -278,11 +275,9 @@ ___
 
 </details>
 
-**<details><summary>` [ (Show|Hide Question|Answer ) "Can I to contact you in any way / provide any feedback ?" ] `</summary>**
+**<details><summary>` [ (Show|Hide Answer) "Can I to contact you in any way / provide any feedback ?" ] `</summary>**
 
-> **Question: "Can I to contact you in any way / provide any feedback ?**"
-
-➥ **Answer**:
+> ➥ **Answer**:
 - **Sure.** Check below for ways to get in touch with me.<br />Feedback is always welcome and greatly appreciated.
 
 </details>
