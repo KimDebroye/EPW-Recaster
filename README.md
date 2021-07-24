@@ -256,7 +256,6 @@ ___
   - **Additionally, make sure the capture region has been sized/positioned correctly.**
 - **It does click/reproduce a roll but still stops a batch roll after a short while.**
   - **May as well be a timing issue.** On older or _trying-to-avoid-what-fries-and-chips-are-made-of-word_ computers,<br />maybe best to also increase timings ( _add about 500~xxxx milliseconds to timings of choice_ ).<br />Check [ [ 2-4. Preview | Roll Mode ](#2-4-preview--roll-mode) ] for the config file location.
-  - Also, keep in mind that ( _at time of writing_ ) older re-rollable gears ( _Primal / Nirvana / ..._ )<br />don't produce in-game roll results as fast as R8 ones,<br />so also for this purpose it would be best to increase timings.<br />If needed, change the `Await In-Game Stats Rolled` timing to around 3750 milliseconds.
 - **Inform me when the above does not provide a solution to the issue.**
 
 </details>
