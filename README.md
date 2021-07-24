@@ -27,7 +27,8 @@ ___
 
 |  |  |  |  |  |
 | :--- | :--- | :--- | :--- | :--- |
-| [Setup](#setup) | [Main Setup Form](##1--main--setup-form) | [Setup](#setup) | [Comparative Condition List Entry Examples](##1-4-3-comparative-condition-list-examples) | [FAQ](#faq)  |
+| [Setup](#setup) | [Main Setup Form](##1--main--setup-form) | [Setup](#setup) | [Comparative Condition List Entry Examples](##1-4-3-comparative-condition-list-examples) | [FAQ](#faq) |
+|  |  |  |  |  |
 
 ___
 
