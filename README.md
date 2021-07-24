@@ -20,7 +20,7 @@ ___
 
 | **Video Demonstration** | Useful ReadMe Links |
 | :--- | :--- |
-| [![EPW Recaster ~ Demonstration Video](https://i.snipboard.io/iB6j5q.jpg)](https://youtu.be/i75cPTjQQ6Q) | • [Setup & Prerequisites](#setup)<br />• [Main Setup Form](#1--main--setup-form)<br />• [Comparative Condition Examples](#1-4-3-comparative-condition-list-examples)<br />• [FAQ](#faq)<br />• [Contact](#contact) |
+| [![EPW Recaster ~ Demonstration Video](https://i.snipboard.io/iB6j5q.jpg)](https://youtu.be/i75cPTjQQ6Q) | 🔽 [Setup & Prerequisites](#setup)<br />🔽 [Main Setup Form](#1--main--setup-form)<br />🔽 [Comparative Condition Examples](#1-4-3-comparative-condition-list-examples)<br />🔽 [FAQ](#faq)<br />🔽 [Contact | Feedback](#contact--feedback) |
 
 ___
 
