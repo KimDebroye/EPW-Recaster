@@ -288,3 +288,5 @@ ___
 
 - Post a message in the [ EPW Tool Release Info Thread ](https://epicpw.com/index.php?topic=68651.0).
 - Feel free to post-message me in-game | on Discord.
+
+> *Feedback is always welcome and greatly appreciated.*
