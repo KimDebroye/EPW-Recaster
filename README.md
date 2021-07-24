@@ -27,9 +27,17 @@ ___
 
 - Extract the contents of the provided package<br />to any folder that has write privileges.<br />( *f.e.* `Desktop` | `C:\Apps\EPW Recaster` | ... )
 - Launch `EPW Recaster(.exe)`.
-  - **[ Developer Note ]**<br />This tool may require admin privileges.<br />In case the OS configuration requires it<br />in order for the tool to run properly:
-    - Right-click `EPW Recaster(.exe)`<br />and choose `Properties`.
-    - In `Compatibility` tab,<br />check `☑ Run this program as an administrator`<br />and confirm by clicking `OK`.
+
+> **❗ Additional Prerequisites ( *in order for the tool to run properly* ) ❗**
+> - **This tool may require administrative privileges due to low-level actions used** ( *f.i. moving/clicking mouse*, ... ).
+>   - **Steps to check/enable administrative privileges** :
+>     - Right-click `EPW Recaster(.exe)`<br />and choose `Properties`.
+>     - In `Compatibility` tab,<br />check `☑ Run this program as an administrator`<br />and confirm by clicking `OK`.
+> - **This tool requires Windows Display Scaling to be set to `100%` for a correct screen capture behavior**.
+>   - **Steps to check/change Windows Display Scaling** ( *Windows 10 / Other Windows versions: use Google* ) :
+>     - Right-click anywhere on desktop<br />and choose `Display Settings`.
+>     - Make sure the Scale and layout setting is set to `100%`<br />and close the window.<br />
+>       ![Windows 10 Display Scaling](https://i.snipboard.io/PQ0t5u.jpg)
 
 ___
 
@@ -73,7 +81,7 @@ ___
   - **Preview Mode : full width of see-through region** and a little above the in-game buttons.
   - **Roll Mode : right half of see-through region** and a little above the in-game buttons.
 
-> **❗ IMPORTANT NOTE ❗**<br />
+> **❗ IMPORTANT NOTE ❗**
 > - **[ ! ] Without any actual game file alterations ( *`configs.pck`* ),<br />it is not recommended to use EPW Recaster<br />to look for stats on weapons that have unique (*long descriptive*) stats**,<br />unless it's (*one of those*) unique stats being targeted in a roll.
 > - *In other words*, avoid looking for stats on weapons having<br />`Purify Spell`, `God of Frenzy`, `Square Formation`, `Soul Shatter`, `Spirit Blackhole`, ...<br />as a possible stat in order not to miss a stat needing an in-game scroll<br />(*unless the previously mentioned stats are being specifically targeted*).
 
@@ -250,9 +258,11 @@ ___
 > ➥ **Answer**:
 - **In general, each capture/roll produces a logged text and image file that may be worth checking<br />in case it would be an OCR related issue.**<br />Check [ 2.2. Log Folder ](#2-2-log-folder) for more information.
 - **It doesn't click/reproduce a roll.**
-  - **It's most certainly an admin privilege issue.**<br />Check [ [ Setup > Developer Note ](#setup) ] for instructions on how to enable administrative privileges.
+  - **It's most probably an admin privilege issue.**<br />Check [ [ Setup > Developer Note ](#setup) ] for instructions on how to enable administrative privileges.
     - **[ Developer Note ]** This fixed it for most I've been chatting with that had this issue.<br />If many encounter this, I may include code in an update<br />to elevate administrative privileges programmatically ( _hoping it would skip the manual fix_ ).
   - **Additionally, make sure the capture region has been sized/positioned correctly.**
+- **It does click but the captured results are incorrect/incomplete.**
+  - **It's most probably a Windows Display Scaling related issue.**<br />Check [ [ Setup > Developer Note ](#setup) ] for instructions on how to change Display Scaling.
 - **It does click/reproduce a roll but still stops a batch roll after a short while.**
   - **May as well be a timing issue.** Even though the most recent release already has all timings increased and I personally don't think this would still be needed, on older or *trying-to-avoid-what-fries-and-chips-are-made-of-word computers* a solution may be to increase timings even a little more ( _add about 500~xxxx milliseconds to timings of choice_ ).
     - Check [ [ 2-4. Preview | Roll Mode ](#2-4-preview--roll-mode) ] for the timings config file location.
