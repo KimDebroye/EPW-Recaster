@@ -290,6 +290,16 @@ ___
 
 </details>
 
+**<details><summary>` [ (Show|Hide Answer) "What are my chances to roll certain stats ?" ] `</summary>**
+
+> ➥ **Answer**:
+- **A good and up-to-date reference on roll chances per stat/gear** can be found here:<br />
+  [EPW Forum ~ R8 Recast Add-On Guide](https://epicpw.com/index.php?topic=2172.0).
+- As for the tool, it doesn't increase chances in any way.<br />
+  Legend goes inf once wrote this tool only takes away the boring part from rolling ;).
+
+</details>
+
 **<details><summary>` [ (Show|Hide Answer) "Can I to contact you in any way / provide any feedback ?" ] `</summary>**
 
 > ➥ **Answer**:
