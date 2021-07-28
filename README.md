@@ -297,16 +297,37 @@ ___
 - **A good and up-to-date reference on roll chances per stat/gear** can be found here:<br />
   [EPW Forum ~ R8 Recast Add-On Guide](https://epicpw.com/index.php?topic=2172.0).
 - As for the tool, it doesn't increase chances in any way.<br />
-  Legend goes *`inf`* once wrote this tool only takes away the boring part from rolling ;).
+  Legend goes *`inf`* once wrote this tool only takes away the boring part of rolling gear ;).
+
+</details>
+
+**<details><summary>` [ (Show|Hide Answer) "I still use version 2 of the tool, should I update to the latest version ?" ] `</summary>**
+
+> ➥ **Answer**:
+- **In general: yes**, I would advice to update.
+- In a nutshell:
+  - For rolls like f.e. *`2 x Channelling*`, *`4 x Interval*`, any previous version will do just fine.
+  - For more exotic rolls ( *combined stats, ...* ), version 3.1 is recommended.
 
 </details>
 
 **<details><summary>` [ (Show|Hide Answer) "Can I to contact you in any way / provide any feedback ?" ] `</summary>**
 
 > ➥ **Answer**:
-- **Sure.** Check below for ways to get in touch with me.<br />Feedback is always welcome and greatly appreciated.
+- **Sure.** Check [below](#contact--feedback) for ways to get in touch with me.<br />Feedback is always welcome and greatly appreciated.
 
 </details>
+
+___
+
+## Technical Notes & References
+
+- This tool has been programmed in Visual Studio 2019 Community Edition using C# language.
+- Third-party libraries used:
+  - [Tesseract](https://github.com/UB-Mannheim/tesseract) ( *OCR* )
+  - [MetroFramework](https://github.com/thielj/MetroFramework) ( *UI framework* )
+  - [Costura](https://github.com/Fody/Costura) ( *self-contained executable build* )
+  - [Humanizer](https://github.com/Humanizr/Humanizer) ( *human readable time difference* )
 
 ___
 
