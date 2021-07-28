@@ -299,6 +299,8 @@ ___
 - As for the tool, it doesn't increase chances in any way.<br />
   Legend goes *`inf`* once wrote this tool only takes away the boring part of rolling gear ;).
 
+<hr />
+
 </details>
 
 **<details><summary>` [ (Show|Hide Answer) "I still use version 2 of the tool, should I update to the latest version ?" ] `</summary>**
@@ -308,6 +310,8 @@ ___
 - In a nutshell:
   - For rolls like f.e. *`2 x Channelling*`, *`4 x Interval*`, any previous version will do just fine.
   - For more exotic rolls ( *combined stats, ...* ), version 3.1 is recommended.
+
+<hr />
 
 </details>
 
