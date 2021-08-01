@@ -14,6 +14,9 @@ EPW Recaster is a tool that
 - user-configurable search conditions.
 > *EPW Recaster does not rely on nor uses any kind of game hook.<br />It solely relies on what is captured using OCR and performs<br />programmatical choices & actions based on captured results.*
 
+> **Compatibility Note**
+- This tool has been confirmed to work on other servers as well (*Relentless, ...*).
+
 ___
 
 ## TL;DR Version 3.1 QuickStart
@@ -310,6 +313,16 @@ ___
 - In a nutshell:
   - For rolls like f.e. *`2 x Channelling*`, *`4 x Interval*`, any previous version will do just fine.
   - For more exotic rolls ( *combined stats, ...* ), version 3.1 is recommended.
+
+<hr />
+
+</details>
+
+**<details><summary>` [ (Show|Hide Answer) "Does this tool work on other servers as well (besides EPW) ?" ] `</summary>**
+
+> ➥ **Answer**:
+- **In general: if server X follows the same mechanics of rolling gears, it should**.
+- I only ever played EPW, although I got confirmation it works on f.e. *Relentless* as well.
 
 <hr />
 
