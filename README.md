@@ -15,7 +15,7 @@ EPW Recaster is a tool that
 > *EPW Recaster does not rely on nor uses any kind of game hook.<br />It solely relies on what is captured using OCR and performs<br />programmatical choices & actions based on captured results.*
 
 > **Compatibility Note**
-- This tool has been confirmed to work on other servers as well (*Relentless, ...*).
+> - This tool has been confirmed to work on other servers as well (*Relentless, ...*).
 
 ___
 
