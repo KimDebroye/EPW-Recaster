@@ -336,6 +336,7 @@ ___
   `Using any kind of text editor, timings can be altered in
    .\Config\Params.cfg (includes additional comments).`
    - These are the settings I use for myself:
+
 ```
 # =================================================================
 # Time it takes for the in-game reproduce button
