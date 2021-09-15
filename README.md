@@ -281,7 +281,6 @@ ___
 
 </details>
 
-
 **<details><summary>` [ (Show|Hide Answer) "Why did the tool skip a very exotic roll ?" ] `</summary>**
 
 > ➥ **Answer**:
@@ -323,6 +322,50 @@ ___
 > ➥ **Answer**:
 - **In general: if server X follows the same mechanics of rolling gears, it should**.
 - I only ever played EPW, although I got confirmation it works on f.e. *Relentless* as well.
+
+<hr />
+
+</details>
+
+**<details><summary>` [ (Show|Hide Answer) "Can the roll speed be adjusted/increased ?" ] `</summary>**
+
+> ➥ **Answer**:
+- **Yes**. The default speed setting may be a bit slow indeed for some.<br />
+  For release purposes I set it to safe network/server values.
+- As stated in section [ [2-4. Preview | Roll Mode](#2-4-preview--roll-mode) ]:
+  `Using any kind of text editor, timings can be altered in
+   .\Config\Params.cfg (includes additional comments).`
+   - These are the settings I use for myself:<br />```
+# =================================================================
+# Time it takes for the in-game reproduce button
+# to become available again.
+# Note: Should be above 1500 milliseconds (personal measured time).
+# =================================================================
+
+Await In-Game Reproduce Button Available    | 1750 milliseconds
+
+
+# =================================================================
+# Time it takes for the in-game stats to be rolled.
+# =================================================================
+
+Await In-Game Stats Rolled            | 1750 milliseconds
+
+
+# =================================================================
+# Time to wait before accepting/rejecting a roll.
+# Notes:
+#       - A lower value speeds up the roll process.
+#         However, if lowered: more difficult to stop roll process
+#         due to mouse cursor being moved.
+#       - A higher value makes it easier for the user
+#         to follow the roll process and thus leans
+#         closer to human behavior.
+# =================================================================
+
+Await Accept/Reject Action            | 2250 milliseconds```
+  - Roll speed can even be sped up more if so desired ( *mainly the 3rd timing option; check config comments for more info* ).
+  - If the tool is still open when changing the above mentioned file, restart the tool to apply any changes.
 
 <hr />
 
