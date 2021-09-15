@@ -337,7 +337,7 @@ ___
    **`.\Config\Params.cfg (includes additional comments).`**
 - Example of settings I use myself:
 
-```
+```ini
 # =================================================================
 # Time it takes for the in-game reproduce button
 # to become available again.
