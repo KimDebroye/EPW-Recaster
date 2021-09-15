@@ -365,7 +365,8 @@ Await In-Game Stats Rolled            | 1750 milliseconds
 #         closer to human behavior.
 # =================================================================
 
-Await Accept/Reject Action            | 2250 milliseconds```
+Await Accept/Reject Action            | 2250 milliseconds
+```
 
    - Roll speed can even be sped up more if so desired ( *mainly the 3rd timing option; check config comments for more info* ).
    - If the tool is still open when changing the above mentioned file, restart the tool to apply any changes.
