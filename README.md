@@ -336,8 +336,7 @@ ___
   `Using any kind of text editor, timings can be altered in
    .\Config\Params.cfg (includes additional comments).`
    - These are the settings I use for myself:
-     
-     ```
+```
 # =================================================================
 # Time it takes for the in-game reproduce button
 # to become available again.
@@ -366,7 +365,6 @@ Await In-Game Stats Rolled            | 1750 milliseconds
 # =================================================================
 
 Await Accept/Reject Action            | 2250 milliseconds```
-
    - Roll speed can even be sped up more if so desired ( *mainly the 3rd timing option; check config comments for more info* ).
    - If the tool is still open when changing the above mentioned file, restart the tool to apply any changes.
 
