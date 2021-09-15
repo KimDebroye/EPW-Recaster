@@ -335,7 +335,8 @@ ___
 - As stated in section [ [2-4. Preview | Roll Mode](#2-4-preview--roll-mode) ]:
   `Using any kind of text editor, timings can be altered in
    .\Config\Params.cfg (includes additional comments).`
-   - These are the settings I use for myself:<br />```
+   - These are the settings I use for myself:<br />
+   ```
 # =================================================================
 # Time it takes for the in-game reproduce button
 # to become available again.
