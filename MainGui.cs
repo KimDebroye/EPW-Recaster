@@ -351,7 +351,7 @@ namespace EPW_Recaster
             InfoGui.chkbxPreviewCapture.Style = metroStyleManager.Style;
 
             // Set stored Max Rolls.
-            if (Properties.Settings.Default.MaxRolls > 0 & Properties.Settings.Default.MaxRolls <= 999)
+            if (Properties.Settings.Default.MaxRolls > 0 & Properties.Settings.Default.MaxRolls <= InfoGui.numMaxRolls.Maximum)
             {
                 InfoGui.numMaxRolls.Value = Properties.Settings.Default.MaxRolls;
             }

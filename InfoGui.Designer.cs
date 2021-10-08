@@ -97,9 +97,9 @@ namespace EPW_Recaster
             this.numMaxRolls.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.numMaxRolls.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numMaxRolls.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numMaxRolls.Location = new System.Drawing.Point(165, 299);
+            this.numMaxRolls.Location = new System.Drawing.Point(158, 299);
             this.numMaxRolls.Maximum = new decimal(new int[] {
-            999,
+            99999,
             0,
             0,
             0});
@@ -109,7 +109,7 @@ namespace EPW_Recaster
             0,
             0});
             this.numMaxRolls.Name = "numMaxRolls";
-            this.numMaxRolls.Size = new System.Drawing.Size(49, 21);
+            this.numMaxRolls.Size = new System.Drawing.Size(57, 21);
             this.numMaxRolls.TabIndex = 13;
             this.numMaxRolls.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numMaxRolls.Value = new decimal(new int[] {
@@ -124,9 +124,9 @@ namespace EPW_Recaster
             this.lblMaxRolls.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMaxRolls.FontSize = MetroFramework.MetroLabelSize.Small;
             this.lblMaxRolls.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblMaxRolls.Location = new System.Drawing.Point(93, 298);
+            this.lblMaxRolls.Location = new System.Drawing.Point(99, 298);
             this.lblMaxRolls.Name = "lblMaxRolls";
-            this.lblMaxRolls.Size = new System.Drawing.Size(72, 22);
+            this.lblMaxRolls.Size = new System.Drawing.Size(58, 22);
             this.lblMaxRolls.TabIndex = 15;
             this.lblMaxRolls.Text = "Roll Limit";
             this.lblMaxRolls.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -178,12 +178,12 @@ namespace EPW_Recaster
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(300, 350);
             this.ControlBox = false;
+            this.Controls.Add(this.chkbxPreviewCapture);
             this.Controls.Add(this.pbLogo);
             this.Controls.Add(this.chkbxAutoScrollBottom);
             this.Controls.Add(this.btnLogFolder);
             this.Controls.Add(this.numMaxRolls);
             this.Controls.Add(this.lblMaxRolls);
-            this.Controls.Add(this.chkbxPreviewCapture);
             this.Controls.Add(this.btnChainForms);
             this.Controls.Add(this.btnOcr);
             this.Controls.Add(this.rTxtBoxInfo);

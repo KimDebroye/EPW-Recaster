@@ -37,6 +37,18 @@ namespace EPW_Recaster.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int CurrentConditionListIndex {
+            get {
+                return ((int)(this["CurrentConditionListIndex"]));
+            }
+            set {
+                this["CurrentConditionListIndex"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
         public global::System.Drawing.Point MainWindowLocation {
             get {
@@ -110,24 +122,12 @@ namespace EPW_Recaster.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("50")]
-        public short MaxRolls {
+        public int MaxRolls {
             get {
-                return ((short)(this["MaxRolls"]));
+                return ((int)(this["MaxRolls"]));
             }
             set {
                 this["MaxRolls"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int CurrentConditionListIndex {
-            get {
-                return ((int)(this["CurrentConditionListIndex"]));
-            }
-            set {
-                this["CurrentConditionListIndex"] = value;
             }
         }
     }

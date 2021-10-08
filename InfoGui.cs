@@ -346,7 +346,7 @@ namespace EPW_Recaster
 
         private void numMaxRolls_ValueChanged(object sender, EventArgs e)
         {
-            Properties.Settings.Default.MaxRolls = (short)numMaxRolls.Value;
+            Properties.Settings.Default.MaxRolls = (int)numMaxRolls.Value;
             Properties.Settings.Default.Save();
 
             lblMaxRolls.Focus();

@@ -175,7 +175,7 @@ namespace EPW_Recaster
             bool keepRunning = true;
 
             int nrRolls = 0;
-            int maxNrRolls = (short)InfoGui.numMaxRolls.Value;
+            int maxNrRolls = (int)InfoGui.numMaxRolls.Value;
 
             bool uniqueStatWarningShown = false;
 
