@@ -330,12 +330,10 @@ ___
 **<details><summary>` [ (Show|Hide Answer) "Can the roll speed be adjusted/increased ?" ] `</summary>**
 
 > ➥ **Answer**:
-- **Yes**. The default speed setting may be a bit slow indeed for some.<br />
-  For release purposes I set it to safe network/server values.
-- As stated in section [ [2-4. Preview | Roll Mode](#2-4-preview--roll-mode) ]:<br />
+- **Yes**. As stated in section [ [2-4. Preview | Roll Mode](#2-4-preview--roll-mode) ]:<br />
   **Using any kind of text editor, timings can be altered in**<br />
    **`.\Config\Params.cfg (includes additional comments).`**
-- Example of settings I use myself:
+- Example of speed settings I use myself ( *defaults since v3.1.2* ):
 
 ```ini
 # =================================================================
