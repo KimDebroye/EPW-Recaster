@@ -333,7 +333,7 @@ ___
 - **Yes**. As stated in section [ [2-4. Preview | Roll Mode](#2-4-preview--roll-mode) ]:<br />
   **Using any kind of text editor, timings can be altered in**<br />
    **`.\Config\Params.cfg (includes additional comments).`**
-- Example of speed settings ( *defaults since v3.1.2* ):
+- Example of speed settings ( *defaults since v3.1.2* ) :
 
 ```ini
 # =================================================================
