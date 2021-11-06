@@ -325,7 +325,7 @@ ___
 </details>
 
 <a id="faq-qa5"></a>
-**<details><summary>` [ (Show|Hide Answer) "I still use version 2 of the tool, should I update to the latest version ?" ] `</summary>**
+**<details><summary>` [ (Show|Hide Answer) "I still use version 2 of the tool, should I update ?" ] `</summary>**
 
 > ➥ **Answer**:
 - **In general: yes**, I would advice to update.
