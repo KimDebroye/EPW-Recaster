@@ -304,7 +304,7 @@ ___
     - **The roll contained a unique stat with a long description.**
       - Check [ [ 1.1. See-through Region ](#1-1-see-through-region) ] for more information.
     - **The captured stats didn't match the rolled stats.**
-      - **Check the [ [ captured stats don't match the rolled stats FaQ entry ](#faq-qa2) ] for more information on this matter.**
+      - Check the [ [ captured stats don't match the rolled stats FaQ entry ](#faq-qa2) ] for more information on this matter.
     - **Inform me with detailed information ( *and if possible steps to reproduce* )<br />if you think any of the above aren't the reason.<br />I would consider such a priority fix.**
 
 <hr />
