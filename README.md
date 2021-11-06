@@ -76,7 +76,7 @@ ___
   - the 3 tiny squares ( *hinting click regions* )<br />to be located somewhere over the in-game buttons<br />( `Retain the old attribute` |`Reproduce` | `Use the new attribute` ),
   - the capture region to fit the text to be captured.
     - **The fitting does not need to be pixel perfect in order for the Optical Character Recognition to work properly.**
-    - Also, even though the following can ( *usually* ) be safely ignored due to implemented captured text filtering,<br />try to avoid including any additional UI elements in the captured region.<br />Reason: Depending on the fitting, parts of the in-game UI could be detected as a character<br />( *f.e. the in-game scroll up icon may be detected as capital 'A'* ).
+    - Also, ```diff ! try to avoid including any additional UI elements in the captured region```.<br />Reason: Depending on the fitting, parts of the in-game UI could be detected as a character<br />( *f.e. the in-game scroll up icon may be detected as capital 'A'* ).
 
 ___
 
