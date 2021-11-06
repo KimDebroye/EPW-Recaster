@@ -260,6 +260,7 @@ ___
 
 ## FAQ
 
+<a id="faq-qa1"></a>
 **<details><summary>` [ (Show|Hide Answer) "The tool doesn't seem to work for me ... what do I do, doc ?" ] `</summary>**
 
 > **Symptoms**: "_No valid roll information detected (yet)._" | "_... doesn't seem necessary to roll any further ... halted ..._" | ...
@@ -275,24 +276,42 @@ ___
 - **It does click/reproduce a roll but still stops a batch roll after a short while.**
   - **May as well be a timing issue.** Even though the most recent release already has all timings increased and I personally don't think this would still be needed, on older or *trying-to-avoid-what-fries-and-chips-are-made-of-word computers* a solution may be to increase timings even a little more ( _add about 500~xxxx milliseconds to timings of choice_ ).
     - Check [ [ 2-4. Preview | Roll Mode ](#2-4-preview--roll-mode) ] for the timings config file location.
+- **The captured stats don't match the rolled stats.**
+  - **Check the [ [ captured stats don't match the rolled stats FaQ entry ](#faq-qa2) ] for more information on this matter.**
 - **Inform me when the above does not provide a solution to the issue.**
 
 <hr />
 
 </details>
 
-**<details><summary>` [ (Show|Hide Answer) "Why did the tool skip a very exotic roll ?" ] `</summary>**
+<a id="faq-qa2"></a>
+**<details><summary>` [ (Show|Hide Answer) "The captured stats don't match the rolled stats ... what do I do, doc ?" ] `</summary>**
 
 > ➥ **Answer**:
-- **It did not meet any requirements set in the condition list.**<br />Always put some thought in which rolled stats would be preferred and add all-encompassing conditions for those.
-- **Another probability could be the roll contained a unique stat with a long description.**
-  - Check [ [ 1.1. See-through Region ](#1-1-see-through-region) ] for more information.
-- **Inform me with detailed information ( *and if possible steps to reproduce* )<br />if you think any of the above aren't the reason.<br />I would consider such a priority fix.**
+- The ( *most probable* ) cause ( *and solution* ) for this is mentioned in the [ [ See-Through Region ](#1-1-see-through-region) ] section of this ReadMe.:<br />
+  ( **try to avoid including any additional UI elements in the captured region** ).
 
 <hr />
 
 </details>
 
+<a id="faq-qa3"></a>
+**<details><summary>` [ (Show|Hide Answer) "Why did the tool skip a very exotic roll ?" ] `</summary>**
+
+> ➥ **Answer**:
+- Most probably, the cause would be any of these:
+    - **It did not meet any requirements set in the condition list.**<br />Always put some thought in which rolled stats would be preferred and add all-encompassing conditions for those.
+    - **The roll contained a unique stat with a long description.**
+      - Check [ [ 1.1. See-through Region ](#1-1-see-through-region) ] for more information.
+    - **The captured stats didn't match the rolled stats.**
+      - **Check the [ [ captured stats don't match the rolled stats FaQ entry ](#faq-qa2) ] for more information on this matter.**
+    - **Inform me with detailed information ( *and if possible steps to reproduce* )<br />if you think any of the above aren't the reason.<br />I would consider such a priority fix.**
+
+<hr />
+
+</details>
+
+<a id="faq-qa4"></a>
 **<details><summary>` [ (Show|Hide Answer) "What are my chances to roll certain stats ?" ] `</summary>**
 
 > ➥ **Answer**:
@@ -305,6 +324,7 @@ ___
 
 </details>
 
+<a id="faq-qa5"></a>
 **<details><summary>` [ (Show|Hide Answer) "I still use version 2 of the tool, should I update to the latest version ?" ] `</summary>**
 
 > ➥ **Answer**:
@@ -317,6 +337,7 @@ ___
 
 </details>
 
+<a id="faq-qa6"></a>
 **<details><summary>` [ (Show|Hide Answer) "Does this tool work on other servers as well (besides EPW) ?" ] `</summary>**
 
 > ➥ **Answer**:
@@ -327,6 +348,7 @@ ___
 
 </details>
 
+<a id="faq-qa7"></a>
 **<details><summary>` [ (Show|Hide Answer) "Can the roll speed be adjusted/increased ?" ] `</summary>**
 
 > ➥ **Answer**:
@@ -373,6 +395,7 @@ Await Accept/Reject Action            | 2250 milliseconds
 
 </details>
 
+<a id="faq-qa8"></a>
 **<details><summary>` [ (Show|Hide Answer) "Can I to contact you in any way / provide any feedback ?" ] `</summary>**
 
 > ➥ **Answer**:
