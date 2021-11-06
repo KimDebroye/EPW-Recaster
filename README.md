@@ -288,7 +288,7 @@ ___
 **<details><summary>` [ (Show|Hide Answer) "The captured stats don't match the rolled stats ... what do I do, doc ?" ] `</summary>**
 
 > ➥ **Answer**:
-- The ( *most probable* ) cause ( *and solution* ) for this is mentioned in the [ [ See-Through Region ](#1-1-see-through-region) ] section of this ReadMe.:<br />
+- The ( *most probable* ) cause ( *and solution* ) for this is mentioned<br />in the [ [ See-Through Region ](#1-1-see-through-region) ] section of this ReadMe.:<br />
   ( **try to avoid including any additional UI elements in the captured region** ).
 
 <hr />
