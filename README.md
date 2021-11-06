@@ -277,7 +277,7 @@ ___
   - **May as well be a timing issue.** Even though the most recent release already has all timings increased and I personally don't think this would still be needed, on older or *trying-to-avoid-what-fries-and-chips-are-made-of-word computers* a solution may be to increase timings even a little more ( _add about 500~xxxx milliseconds to timings of choice_ ).
     - Check [ [ 2-4. Preview | Roll Mode ](#2-4-preview--roll-mode) ] for the timings config file location.
 - **The captured stats don't match the rolled stats.**
-  - **Check the [ [ captured stats don't match the rolled stats FaQ entry ](#faq-qa2) ] for more information on this matter.**
+  - **Check the [ [ "captured stats don't match the rolled stats" FaQ entry ](#faq-qa2) ] for more information.**
 - **Inform me when the above does not provide a solution to the issue.**
 
 <hr />
@@ -304,7 +304,7 @@ ___
     - **The roll contained a unique stat with a long description.**
       - Check [ [ 1.1. See-through Region ](#1-1-see-through-region) ] for more information.
     - **The captured stats didn't match the rolled stats.**
-      - Check the [ [ captured stats don't match the rolled stats FaQ entry ](#faq-qa2) ] for more information on this matter.
+      - Check the [ [ "captured stats don't match the rolled stats" FaQ entry ](#faq-qa2) ] for more information.
     - **Inform me with detailed information ( *and if possible steps to reproduce* )<br />if you think any of the above aren't the reason.<br />I would consider such a priority fix.**
 
 <hr />
